@@ -1,4 +1,4 @@
-<?php //$this->load->view('_blocks/header')?>
+<?php $this->load->view('_blocks/header')?>
      
     <div id="main">
         <div class="wrapper">
@@ -7,4 +7,4 @@
         </div>
     </div>
      
-<?php //$this->load->view('_blocks/footer')?>
+<?php $this->load->view('_blocks/footer')?>

@@ -1,35 +1,49 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-	<meta charset="utf-8">
- 	<title>
-		<?php 
-			if (!empty($is_blog)) :
-				echo $CI->fuel_blog->page_title($page_title, ' : ', 'right');
-			else:
-				echo fuel_var('page_title', '');
-			endif;
-		?>
-	</title>
+<header id="header" class="navbar-static-top">
+  <div class="topnav hidden-xs">
+    <div class="container">
+      <ul class="quick-menu pull-left">
+        <li><a href="#">My Account</a></li>
+      </ul>
+      <ul class="quick-menu pull-right">
+        <li><a href="pages-login1.html">LOGIN</a></li>
+        <li><a href="#">Singup</a></li>
+        <li class="ribbon currency">
+          <a href="#" title="">USD</a>
+          <ul class="menu mini">
+            <li><a href="#" title="AUD">AUD</a></li>
+            <li><a href="#" title="BRL">BRL</a></li>
+            <li class="active"><a href="#" title="USD">USD</a></li>
+            <li><a href="#" title="CAD">CAD</a></li>
+            <li><a href="#" title="CHF">CHF</a></li>
+            <li><a href="#" title="CNY">CNY</a></li>
+            <li><a href="#" title="CZK">CZK</a></li>
+            <li><a href="#" title="DKK">DKK</a></li>
+            <li><a href="#" title="EUR">EUR</a></li>
+            <li><a href="#" title="GBP">GBP</a></li>
+            <li><a href="#" title="HKD">HKD</a></li>
+            <li><a href="#" title="HUF">HUF</a></li>
+            <li><a href="#" title="IDR">IDR</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
 
-	<meta name="keywords" content="<?php echo fuel_var('meta_keywords')?>">
-	<meta name="description" content="<?php echo fuel_var('meta_description')?>">
+  <div class="main-header">
 
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-	<?php
-		echo css('main').css($css);
+    <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+      Mobile Menu Toggle
+    </a>
 
-		if (!empty($is_blog)):
-			echo $CI->fuel_blog->header();
-		endif;
-	?>
-<?php echo js('jquery, main'); ?>
+    <div class="container">
+      <h1 class="logo navbar-brand">
+        <a href="index.html" title="Travelo - home">
+          <img src="<?php echo img_path("logo.png") ?>" alt="Travelo HTML5 Template" />
+        </a>
+      </h1>
 
-</head>
-<body>
-	<div class="page">
-		<div class="wrapper">
-			<header class="page_header">
-				<div class="logo"><object type="image/svg+xml" width="160" height="145" data="<?php echo img_path('_template_icons.svg#fuel') ?>"></object></div>
-				<h1><?php echo fuel_var('heading')?></h1>
-			</header>		
+      <?php $this->load->view('_blocks/main_menu') ?>
+    </div>
+    <?php $this->load->view('_blocks/mobile_menu') ?>
+  </div>
+</header>
