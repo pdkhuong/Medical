@@ -674,7 +674,7 @@
         </div>
       </div>
       <div class="col-sm-6 image-container no-margin">
-        <img src="<?php img_path('couple.png') ?>" alt="" class="animated" data-animation-type="fadeInUp" data-animation-duration="2">
+        <img src="<?php echo img_path('couple.png') ?>" alt="" class="animated" data-animation-type="fadeInUp" data-animation-duration="2">
       </div>
     </div>
   </div>
