@@ -11,6 +11,5 @@ $config['time_format'] = 'g:ia';
 
 // for debugging... there is a hook in place to turn this on
 $config['enable_profiler'] = FALSE;
-
 /* End of file MY_config.php */
 /* Location: ./application/config/MY_config.php */

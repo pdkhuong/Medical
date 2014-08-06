@@ -5,7 +5,7 @@
 | General
 |--------------------------------------------------------------------------
 */
-$lang['fuel_page_title'] = 'FUEL CMS';
+$lang['fuel_page_title'] = 'Medical Tourism Vietnam Admin';
 $lang['logged_in_as'] = 'Logged in as:';
 $lang['logout'] = 'Logout';
 $lang['fuel_developed_by'] = 'FUEL CMS version %1s is developed by <a href="http://www.thedaylightstudio.com" target="_blank">Daylight Studio</a> and built upon the <a href="http://www.codeigniter.com" target="_blank">CodeIgniter</a> framework.';
@@ -88,7 +88,7 @@ $lang['auth_log_account_lockout'] = "Account lockout for '%1s' from %2s";
 |--------------------------------------------------------------------------
 */
 $lang['section_dashboard'] = 'Dashboard';
-$lang['dashboard_intro'] = 'Welcome to FUEL CMS.';
+$lang['dashboard_intro'] = 'Welcome to admin page.';
 $lang['dashboard_hdr_latest_activity'] = 'Latest Activity';
 $lang['dashboard_hdr_latest_news'] = 'Latest FUEL News';
 $lang['dashboard_hdr_modified'] = 'Recently Modified Pages';

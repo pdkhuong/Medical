@@ -29,3 +29,4 @@ $config['module_overwrites']['categories']['hidden'] = TRUE; // change to FALSE 
 $config['module_overwrites']['tags']['hidden'] = TRUE; // change to FALSE if you want to use the generic tags module
 
 /*********************** /OVERWRITES ************************************/
+

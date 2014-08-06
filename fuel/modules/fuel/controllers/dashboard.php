@@ -23,7 +23,6 @@ class Dashboard extends Fuel_base_controller {
 			$vars['change_pwd'] = ($user['password'] == $this->fuel_users_model->salted_password_hash($this->config->item('default_pwd', 'fuel'), $user['salt']));
 
 			$dashboards = $this->fuel->admin->dashboards();
-
 			$vars['dashboards'] = $dashboards;
 			$crumbs = array('' => 'Dashboard');
 			$this->fuel->admin->set_titlebar($crumbs, 'ico_dashboard');
@@ -37,27 +36,10 @@ class Dashboard extends Fuel_base_controller {
 	{
 		if (is_ajax())
 		{
-			$this->load->helper('simplepie');
 			$this->load->module_model(FUEL_FOLDER, 'fuel_pages_model');
 			$this->load->module_model(FUEL_FOLDER, 'fuel_logs_model');
 			$vars['recently_modifed_pages'] = $this->fuel_pages_model->find_all_array(array(), 'last_modified desc', 10);
 			$vars['latest_activity'] = $this->fuel_logs_model->latest_activity(10);
-			if (file_exists(APPPATH.'/views/_docs/fuel'.EXT))
-			{
-				$vars['docs'] = $this->load->module_view(NULL, '_docs/fuel', $vars, TRUE);
-			}
-			$feed = $this->fuel->config('dashboard_rss');
-
-			$limit = 3;
-			$feed_data = simplepie($feed, $limit);
-
-			// check for latest version
-			if (array_key_exists('latest_fuel_version', $feed_data) AND version_compare($feed_data['latest_fuel_version'], FUEL_VERSION, '>'))
-			{
-				$vars['latest_fuel_version'] = $feed_data['latest_fuel_version'];
-			}
-			unset($feed_data['latest_fuel_version']);
-			$vars['feed'] = $feed_data;
 			$this->load->view('dashboard_ajax', $vars);
 		}
 	}
