@@ -19,7 +19,7 @@ if ( ! function_exists('css'))
 {
 	function css($file = '')
   {
-    $filePath = Asset::get_filepath_css($file.'.css');
+    $filePath = base_url().Asset::get_filepath_css($file.'.css');
     return "<link href='".$filePath."' rel='stylesheet' type='text/css'>";
   }
 }
@@ -27,7 +27,7 @@ if ( ! function_exists('js'))
 {
 	function js($file = '')
   {
-    $filePath = Asset::get_filepath_js($file.'.js');
+    $filePath = base_url(). Asset::get_filepath_js($file.'.js');
     return "<script type='text/javascript' src=".$filePath."></script>";
   }
 }
@@ -35,6 +35,6 @@ if ( ! function_exists('img_path'))
 {
 	function img_path($file = '')
   {
-    return Asset::get_filepath_img($file);
+    return base_url().Asset::get_filepath_img($file);
   }
 }

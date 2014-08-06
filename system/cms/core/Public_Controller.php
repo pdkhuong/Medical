@@ -17,7 +17,6 @@ class Public_Controller extends MY_Controller
 		parent::__construct();
 
 		$this->benchmark->mark('public_controller_start');
-
 		// Check redirects if GET and Not AJAX
 		if ( ! $this->input->is_ajax_request() and $_SERVER['REQUEST_METHOD'] == 'GET')
 		{
@@ -111,7 +110,6 @@ class Public_Controller extends MY_Controller
 		// Assign segments to the template the new way
 		$this->template->server = $_SERVER;
 		$this->template->theme = $this->theme;
-
 		$this->benchmark->mark('public_controller_end');
 	}
 }
