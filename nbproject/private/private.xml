@@ -3,7 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp/htdocs/medical/system/cms/helpers/MY_common_helper.php</file>
+            <file>file:/D:/xampp/htdocs/medical/system/cms/modules/users/controllers/users.php</file>
+            <file>file:/D:/xampp/htdocs/medical/addons/shared_addons/themes/medical/views/partials/top_script.php</file>
+            <file>file:/D:/xampp/htdocs/medical/addons/shared_addons/themes/medical/views/partials/header.php</file>
+            <file>file:/D:/xampp/htdocs/medical/addons/shared_addons/themes/medical/views/partials/bottom_script.php</file>
+            <file>file:/D:/xampp/htdocs/medical/addons/shared_addons/themes/medical/views/layouts/default.php</file>
+            <file>file:/D:/xampp/htdocs/medical/addons/shared_addons/modules/medical/views/index.php</file>
+            <file>file:/D:/xampp/htdocs/medical/system/cms/modules/blog/controllers/blog.php</file>
+            <file>file:/D:/xampp/htdocs/medical/system/cms/core/Public_Controller.php</file>
             <file>file:/D:/xampp/htdocs/medical/addons/shared_addons/modules/medical/controllers/home.php</file>
         </group>
     </open-files>

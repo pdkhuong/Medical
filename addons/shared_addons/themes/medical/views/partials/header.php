@@ -2,12 +2,17 @@
   <div class="topnav hidden-xs">
     <div class="container">
       <ul class="quick-menu pull-left">
-        <li><a href="#">My Account</a></li>
+        <li><a href="<?php echo base_url().'edit-profile'?>">My Account</a></li>
       </ul>
       <ul class="quick-menu pull-right">
-        <li><a href="pages-login1.html">LOGIN</a></li>
-        <li><a href="#">Singup</a></li>
-        <li class="ribbon currency">
+        <?php if($this->current_user):?>
+        <li><a href="<?php echo base_url().'users/logout'?>">LOGOUT</a></li>
+        <?php else:?>
+        <li><a href="<?php echo base_url().'users/login'?>">LOGIN</a></li>
+        <li><a href="<?php echo base_url().'users/register'?>">Singup</a></li>
+        <?php endif;?>
+
+        <li class="ribbon currency hide">
           <a href="#" title="">USD</a>
           <ul class="menu mini">
             <li><a href="#" title="AUD">AUD</a></li>

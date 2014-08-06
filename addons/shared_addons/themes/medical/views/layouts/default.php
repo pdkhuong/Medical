@@ -15,7 +15,6 @@
 <body>
     <div id="page-wrapper">
         <?php theme_partial('header')?>
-        <?php theme_partial('slideshow')?>
         <?php echo $template['body']; ?>  
         <?php theme_partial('footer')?>
     </div>

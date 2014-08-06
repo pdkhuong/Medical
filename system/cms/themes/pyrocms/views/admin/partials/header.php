@@ -1,5 +1,5 @@
 <noscript>
-	<span>PyroCMS requires that JavaScript be turned on for many of the functions to work correctly. Please turn JavaScript on and reload the page.</span>
+	<span>Please turn JavaScript on and reload the page.</span>
 </noscript>
 
 <div class="topbar" dir=<?php $vars = $this->load->get_vars(); echo $vars['lang']['direction'] ?>>

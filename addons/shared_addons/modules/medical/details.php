@@ -17,7 +17,7 @@
         'frontend' => true,
         'backend' => true,
         'skip_xss' => true,
-        'menu' => 'content',
+        ///'menu' => 'content',
       );
       return $info;
     }

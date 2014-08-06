@@ -210,7 +210,7 @@ function changeTraveloElementUI() {
     // datepicker
     tjq('.datepicker-wrap input').datepicker({
         showOn: 'button',
-        buttonImage: '/assets/images/blank.png',
+        buttonImage: '../img/blank.png',
         buttonText: '',
         buttonImageOnly: true,
         /*showOtherMonths: true,*/

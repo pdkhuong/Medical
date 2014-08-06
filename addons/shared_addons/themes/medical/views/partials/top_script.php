@@ -6,5 +6,4 @@
 
 <!-- Javascript Page Loader -->
 <?php echo js("pace.min") ?>
-<?php echo js("page-loading") ?>
 <?php echo js("jquery-1.11.1.min") ?>
