@@ -1,84 +1,19 @@
 <nav id="main-menu" role="navigation">
   <ul class="menu">
     <li class="menu-item-has-children">
-      <a href="index.html">Home</a>
-      <ul>
-        <li><a href="index.html">Home Layout 1</a></li>
-        <li><a href="homepage2.html">Home Layout 2</a></li>
-        <li><a href="homepage3.html">Home Layout 3</a></li>
-        <li><a href="homepage4.html">Home Layout 4</a></li>
-        <li><a href="homepage5.html">Home Layout 5</a></li>
-        <li><a href="homepage6.html">Home Layout 6</a></li>
-        <li><a href="homepage7.html">Home Layout 7</a></li>
-        <li><a href="homepage8.html">Home Layout 8</a></li>
-        <li><a href="homepage9.html">Home Layout 9</a></li>
-        <li><a href="homepage10.html">Home Layout 10</a></li>
-        <li><a href="homepage11.html">Home Layout 11</a></li>
-      </ul>
+      <a href="#">Dental</a>
     </li>
     <li class="menu-item-has-children">
-      <a href="#">Sliders</a>
-      <ul>
-        <li><a href="slider1.html">Slider - Travelo</a></li>
-        <li><a href="slider2.html">Slider - Concept</a></li>
-        <li><a href="slider3.html">Slider - Promotion</a></li>
-        <li><a href="slider4.html">Slider - Snapshots</a></li>
-        <li><a href="slider5.html">Slider - Holidays</a></li>
-        <li><a href="slider6.html">Slider - Couples</a></li>
-        <li><a href="slider7.html">Slider - Family</a></li>
-
-      </ul>
+      <a href="hotel-index.html">Cosmetic Laser</a>
     </li>
     <li class="menu-item-has-children">
-      <a href="hotel-index.html">Hotels</a>
-      <ul>
-        <li><a href="hotel-index.html">Home Hotels</a></li>
-        <li><a href="hotel-list-view.html">List View</a></li>
-        <li><a href="hotel-grid-view.html">Grid View</a></li>
-        <li><a href="hotel-block-view.html">Block View</a></li>
-        <li><a href="hotel-detailed.html">Detailed</a></li>
-        <li><a href="hotel-booking.html">Booking</a></li>
-        <li><a href="hotel-thankyou.html">Thank You</a></li>
-      </ul>
+      <a href="flight-index.html">Our Doctors</a>
     </li>
-    <li class="menu-item-has-children">
-      <a href="flight-index.html">Flights</a>
-      <ul>
-        <li><a href="flight-index.html">Home Flights</a></li>
-        <li><a href="flight-list-view.html">List View</a></li>
-        <li><a href="flight-grid-view.html">Grid View</a></li>
-        <li><a href="flight-block-view.html">Block View</a></li>
-        <li><a href="flight-detailed.html">Detailed</a></li>
-        <li><a href="flight-booking.html">Booking</a></li>
-        <li><a href="flight-thankyou.html">Thank You</a></li>
-      </ul>
-    </li>
-    <li class="menu-item-has-children">
-      <a href="car-index.html">Cars</a>
-      <ul>
-        <li><a href="car-index.html">Home Cars</a></li>
-        <li><a href="car-list-view.html">List View</a></li>
-        <li><a href="car-grid-view.html">Grid View</a></li>
-        <li><a href="car-block-view.html">Block View</a></li>
-        <li><a href="car-detailed.html">Detailed</a></li>
-        <li><a href="car-booking.html">Booking</a></li>
-        <li><a href="car-thankyou.html">Thank You</a></li>
-      </ul>
-    </li>
-    <li class="menu-item-has-children">
-      <a href="cruise-index.html">Cruises</a>
-      <ul>
-        <li><a href="cruise-index.html">Home Cruises</a></li>
-        <li><a href="cruise-list-view.html">List View</a></li>
-        <li><a href="cruise-grid-view.html">Grid View</a></li>
-        <li><a href="cruise-block-view.html">Block View</a></li>
-        <li><a href="cruise-detailed.html">Detailed</a></li>
-        <li><a href="cruise-booking.html">Booking</a></li>
-        <li><a href="cruise-thankyou.html">Thank You</a></li>
-      </ul>
+	 <li class="menu-item-has-children">
+      <a href="flight-index.html">Price List</a>
     </li>
     <li class="menu-item-has-children megamenu-menu">
-      <a href="#">Pages</a>
+      <a href="#">Reviews</a>
       <div class="megamenu-wrapper container" data-items-per-column="8">
         <div class="megamenu-holder">
           <ul class="megamenu">
@@ -132,7 +67,7 @@
       </div>
     </li>
     <li class="menu-item-has-children">
-      <a href="#">Shortcodes</a>
+      <a href="#">Travel Information</a>
       <ul>
         <li><a href="shortcode-accordions-toggles.html">Accordions &amp; Toggles</a></li>
         <li><a href="shortcode-tabs.html">Tabs</a></li>
@@ -159,7 +94,7 @@
       </ul>
     </li>
     <li class="menu-item-has-children">
-      <a href="#">Bonus</a>
+      <a href="#">Blogs</a>
       <ul>
         <li><a href="dashboard1.html">Dashboard 1</a></li>
         <li><a href="dashboard2.html">Dashboard 2</a></li>
@@ -211,5 +146,6 @@
         </li>
       </ul>
     </li>
+  </ul>
   </ul>
 </nav>

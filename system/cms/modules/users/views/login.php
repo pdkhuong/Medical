@@ -1,3 +1,14 @@
+<div class="page-title-container">
+    <div class="container">
+        <div class="page-title pull-left">
+            <h2 class="entry-title">Cruise Booking</h2>
+        </div>
+        <ul class="breadcrumbs pull-right">
+            <li><a href="http://www.soaptheme.com/html/travelo/cruise-booking.html#">HOME</a></li>
+            <li class="active">Cruise Booking</li>
+        </ul>
+    </div>
+</div>
 <h2 class="page-title" id="page_title"><?php echo lang('user:login_header') ?></h2>
 
 <?php if (validation_errors()): ?>

@@ -38,3 +38,12 @@ if ( ! function_exists('img_path'))
     return base_url().Asset::get_filepath_img($file);
   }
 }
+
+if ( ! function_exists('file_path'))
+{
+	function file_path($file = '')
+  {
+    //return base_url().Asset::get_filepath($file, 'files');
+    return  'https://a0.muscache.com/airbnb/static/London-P1-1.mp4';
+  } 
+}

@@ -1,804 +1,266 @@
-<?php theme_partial('slideshow')?>
+<?php theme_partial('slideshow') ?>
 <section id="content">
-  <div class="search-box-wrapper">
-    <div class="search-box container">
-      <ul class="search-tabs clearfix">
-        <li class="active"><a href="#hotels-tab" data-toggle="tab">HOTELS</a></li>
-        <li><a href="#flights-tab" data-toggle="tab">FLIGHTS</a></li>
-        <li><a href="#flight-and-hotel-tab" data-toggle="tab">FLIGHT &amp; HOTELS</a></li>
-        <li><a href="#cars-tab" data-toggle="tab">CARS</a></li>
-        <li><a href="#cruises-tab" data-toggle="tab">CRUISES</a></li>
-        <li><a href="#flight-status-tab" data-toggle="tab">FLIGHT STATUS</a></li>
-        <li><a href="#online-checkin-tab" data-toggle="tab">ONLINE CHECK IN</a></li>
-      </ul>
-      <div class="visible-mobile">
-        <ul id="mobile-search-tabs" class="search-tabs clearfix">
-          <li class="active"><a href="#hotels-tab">HOTELS</a></li>
-          <li><a href="#flights-tab">FLIGHTS</a></li>
-          <li><a href="#flight-and-hotel-tab">FLIGHT &amp; HOTELS</a></li>
-          <li><a href="#cars-tab">CARS</a></li>
-          <li><a href="#cruises-tab">CRUISES</a></li>
-          <li><a href="#flight-status-tab">FLIGHT STATUS</a></li>
-          <li><a href="#online-checkin-tab">ONLINE CHECK IN</a></li>
-        </ul>
-      </div>
-
-      <div class="search-tab-content">
-        <div class="tab-pane fade active in" id="hotels-tab">
-          <form action="hotel-list-view.html" method="post">
-            <div class="row">
-              <div class="form-group col-sm-6 col-md-3">
-                <h4 class="title">Where</h4>
-                <label>Your Destination</label>
-                <input type="text" class="input-text full-width" placeholder="enter a destination or hotel name" />
-              </div>
-
-              <div class="form-group col-sm-6 col-md-4">
-                <h4 class="title">When</h4>
-                <div class="row">
-                  <div class="col-xs-6">
-                    <label>Check In</label>
-                    <div class="datepicker-wrap">
-                      <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <label>Check Out</label>
-                    <div class="datepicker-wrap">
-                      <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group col-sm-6 col-md-3">
-                <h4 class="title">Who</h4>
-                <div class="row">
-                  <div class="col-xs-4">
-                    <label>Rooms</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xs-4">
-                    <label>Adults</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xs-4">
-                    <label>Kids</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group col-sm-6 col-md-2 fixheight">
-                <label class="hidden-xs">&nbsp;</label>
-                <button type="submit" class="full-width icon-check animated" data-animation-type="bounce" data-animation-duration="1">SEARCH NOW</button>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="tab-pane fade" id="flights-tab">
-          <form action="flight-list-view.html" method="post">
-            <div class="row">
-              <div class="col-md-4">
-                <h4 class="title">Where</h4>
-                <div class="form-group">
-                  <label>Leaving From</label>
-                  <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
-                </div>
-                <div class="form-group">
-                  <label>Going To</label>
-                  <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <h4 class="title">When</h4>
-                <label>Departing On</label>
-                <div class="form-group row">
-                  <div class="col-xs-6">
-                    <div class="datepicker-wrap">
-                      <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">anytime</option>
-                        <option value="2">morning</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <label>Arriving On</label>
-                <div class="form-group row">
-                  <div class="col-xs-6">
-                    <div class="datepicker-wrap">
-                      <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">anytime</option>
-                        <option value="2">morning</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <h4 class="title">Who</h4>
-                <div class="form-group row">
-                  <div class="col-xs-3">
-                    <label>Adults</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xs-3">
-                    <label>Kids</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <label>Promo Code</label>
-                    <input type="text" class="input-text full-width" placeholder="type here" />
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-xs-3">
-                    <label>Infants</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xs-6 pull-right">
-                    <label>&nbsp;</label>
-                    <button class="full-width icon-check">SERACH NOW</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="tab-pane fade" id="flight-and-hotel-tab">
-          <form action="flight-list-view.html" method="post">
-            <div class="row">
-              <div class="col-md-4">
-                <h4 class="title">Where</h4>
-                <div class="form-group">
-                  <label>Leaving From</label>
-                  <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
-                </div>
-                <div class="form-group">
-                  <label>Going To</label>
-                  <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <h4 class="title">When</h4>
-                <label>Departing On</label>
-                <div class="form-group row">
-                  <div class="col-xs-6">
-                    <div class="datepicker-wrap">
-                      <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">anytime</option>
-                        <option value="2">morning</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <label>Arriving On</label>
-                <div class="form-group row">
-                  <div class="col-xs-6">
-                    <div class="datepicker-wrap">
-                      <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">anytime</option>
-                        <option value="2">morning</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <h4 class="title">Who</h4>
-                <div class="form-group row">
-                  <div class="col-xs-3">
-                    <label>Adults</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xs-3">
-                    <label>Kids</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <label>Promo Code</label>
-                    <input type="text" class="input-text full-width" placeholder="type here" />
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-xs-3">
-                    <label>Rooms</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xs-6 pull-right">
-                    <label>&nbsp;</label>
-                    <button class="full-width icon-check">SERACH NOW</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="tab-pane fade" id="cars-tab">
-          <form action="car-list-view.html" method="post">
-            <div class="row">
-              <div class="col-md-4">
-                <h4 class="title">Where</h4>
-                <div class="form-group">
-                  <label>Pick Up</label>
-                  <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
-                </div>
-                <div class="form-group">
-                  <label>Drop Off</label>
-                  <input type="text" class="input-text full-width" placeholder="city, distirct or specific airpot" />
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <h4 class="title">When</h4>
-                <div class="form-group">
-                  <label>Pick-Up Date / Time</label>
-                  <div class="row">
-                    <div class="col-xs-6">
-                      <div class="datepicker-wrap">
-                        <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                      </div>
-                    </div>
-                    <div class="col-xs-6">
-                      <div class="selector">
-                        <select class="full-width">
-                          <option value="1">anytime</option>
-                          <option value="2">morning</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label>Drop-Off Date / Time</label>
-                  <div class="row">
-                    <div class="col-xs-6">
-                      <div class="datepicker-wrap">
-                        <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                      </div>
-                    </div>
-                    <div class="col-xs-6">
-                      <div class="selector">
-                        <select class="full-width">
-                          <option value="1">anytime</option>
-                          <option value="2">morning</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <h4 class="title">Who</h4>
-                <div class="form-group row">
-                  <div class="col-xs-3">
-                    <label>Adults</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xs-3">
-                    <label>Kids</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="1">01</option>
-                        <option value="2">02</option>
-                        <option value="3">03</option>
-                        <option value="4">04</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <label>Promo Code</label>
-                    <input type="text" class="input-text full-width" placeholder="type here" />
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <div class="col-xs-6">
-                    <label>Car Type</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="">select a car type</option>
-                        <option value="economy">Economy</option>
-                        <option value="compact">Compact</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <label>&nbsp;</label>
-                    <button class="full-width icon-check">SERACH NOW</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="tab-pane fade" id="cruises-tab">
-          <form action="cruise-list-view.html" method="post">
-            <div class="row">
-              <div class="col-md-4">
-                <h4 class="title">Where</h4>
-                <div class="form-group">
-                  <label>Your Destination</label>
-                  <input type="text" class="input-text full-width" placeholder="enter a destination or hotel name" />
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <h4 class="title">When</h4>
-                <div class="form-group row">
-                  <div class="col-xs-6">
-                    <label>Departure Date</label>
-                    <div class="datepicker-wrap">
-                      <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <label>Cruise Length</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="">select length</option>
-                        <option value="1">1-2 Nights</option>
-                        <option value="2">3-4 Nights</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <h4 class="title">Who</h4>
-                <div class="form-group row">
-                  <div class="col-xs-6">
-                    <label>Cruise Line</label>
-                    <div class="selector">
-                      <select class="full-width">
-                        <option value="">select cruise line</option>
-                        <option>Azamara Club Cruises</option>
-                        <option>Carnival Cruise Lines</option>
-                        <option>Celebrity Cruises</option>
-                        <option>Costa Cruise Lines</option>
-                        <option>Cruise &amp; Maritime Voyages</option>
-                        <option>Crystal Cruises</option>
-                        <option>Cunard Line Ltd.</option>
-                        <option>Disney Cruise Line</option>
-                        <option>Holland America Line</option>
-                        <option>Hurtigruten Cruise Line</option>
-                        <option>MSC Cruises</option>
-                        <option>Norwegian Cruise Line</option>
-                        <option>Oceania Cruises</option>
-                        <option>Orion Expedition Cruises</option>
-                        <option>P&amp;O Cruises</option>
-                        <option>Paul Gauguin Cruises</option>
-                        <option>Peter Deilmann Cruises</option>
-                        <option>Princess Cruises</option>
-                        <option>Regent Seven Seas Cruises</option>
-                        <option>Royal Caribbean International</option>
-                        <option>Seabourn Cruise Line</option>
-                        <option>Silversea Cruises</option>
-                        <option>Star Clippers</option>
-                        <option>Swan Hellenic Cruises</option>
-                        <option>Thomson Cruises</option>
-                        <option>Viking River Cruises</option>
-                        <option>Windstar Cruises</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <label>&nbsp;</label>
-                    <button class="icon-check full-width">SEARCH NOW</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="tab-pane fade" id="flight-status-tab">
-          <form action="flight-list-view.html" method="post">
-            <div class="row">
-              <div class="col-md-6">
-                <h4 class="title">Where</h4>
-                <div class="form-group row">
-                  <div class="col-xs-6">
-                    <label>Leaving From</label>
-                    <input type="text" class="input-text full-width" placeholder="enter a city or place name" />
-                  </div>
-                  <div class="col-xs-6">
-                    <label>Going To</label>
-                    <input type="text" class="input-text full-width" placeholder="enter a city or place name" />
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xs-6 col-md-2">
-                <h4 class="title">When</h4>
-                <div class="form-group">
-                  <label>Departure Date</label>
-                  <div class="datepicker-wrap">
-                    <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xs-6 col-md-2">
-                <h4 class="title">Who</h4>
-                <div class="form-group">
-                  <label>Flight Number</label>
-                  <input type="text" class="input-text full-width" placeholder="enter flight number" />
-                </div>
-              </div>
-              <div class="form-group col-md-2 fixheight">
-                <label class="hidden-xs">&nbsp;</label>
-                <button class="icon-check full-width">SEARCH NOW</button>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="tab-pane fade" id="online-checkin-tab">
-          <form>
-            <div class="row">
-              <div class="col-md-6">
-                <h4 class="title">Where</h4>
-                <div class="form-group row">
-                  <div class="col-xs-6">
-                    <label>Leaving From</label>
-                    <input type="text" class="input-text full-width" placeholder="enter a city or place name" />
-                  </div>
-                  <div class="col-xs-6">
-                    <label>Going To</label>
-                    <input type="text" class="input-text full-width" placeholder="enter a city or place name" />
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xs-6 col-md-2">
-                <h4 class="title">When</h4>
-                <div class="form-group">
-                  <label>Departure Date</label>
-                  <div class="datepicker-wrap">
-                    <input type="text" class="input-text full-width" placeholder="mm/dd/yy" />
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-xs-6 col-md-2">
-                <h4 class="title">Who</h4>
-                <div class="form-group">
-                  <label>Full Name</label>
-                  <input type="text" class="input-text full-width" placeholder="enter your full name" />
-                </div>
-              </div>
-              <div class="form-group col-md-2 fixheight">
-                <label class="hidden-xs">&nbsp;</label>
-                <button class="icon-check full-width">SEARCH NOW</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Popuplar Destinations -->
-  <div class="destinations section">
-    <div class="container">
-      <h2>Popular Destinations</h2>
-      <div class="row image-box style1 add-clearfix">
-        <div class="col-sms-6 col-sm-6 col-md-3">
-          <article class="box">
-            <figure class="animated" data-animation-type="fadeInDown" data-animation-duration="1">
-              <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><img src="<?php echo img_path("destinations01.jpg") ?>" alt="" width="270" height="160" /></a>
-            </figure>
-            <div class="details">
-              <span class="price"><small>FROM</small>$490</span>
-              <h4 class="box-title"><a href="hotel-detailed.html">Atlantis - The Palm<small>Paris</small></a></h4>
-            </div>
-          </article>
-        </div>
-        <div class="col-sms-6 col-sm-6 col-md-3">
-          <article class="box">
-            <figure class="animated" data-animation-type="fadeInDown" data-animation-duration="1" data-animation-delay="0.3">
-              <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><img src="<?php echo img_path("destinations02.jpg") ?>" alt="" width="270" height="160" /></a>
-            </figure>
-            <div class="details">
-              <span class="price"><small>FROM</small>$170</span>
-              <h4 class="box-title"><a href="hotel-detailed.html">Hilton Hotel<small>LONDON</small></a></h4>
-            </div>
-          </article>
-        </div>
-        <div class="col-sms-6 col-sm-6 col-md-3">
-          <article class="box">
-            <figure class="animated" data-animation-type="fadeInDown" data-animation-duration="1" data-animation-delay="0.6">
-              <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><img src="<?php echo img_path("destinations03.jpg") ?>" alt="" width="270" height="160" /></a>
-            </figure>
-            <div class="details">
-              <span class="price"><small>FROM</small>$130</span>
-              <h4 class="box-title"><a href="hotel-detailed.html">MGM Grand<small>LAS VEGAS</small></a></h4>
-            </div>
-          </article>
-        </div>
-        <div class="col-sms-6 col-sm-6 col-md-3">
-          <article class="box">
-            <figure class="animated" data-animation-type="fadeInDown" data-animation-duration="1" data-animation-delay="0.9">
-              <a href="ajax/slideshow-popup.html" title="" class="hover-effect popup-gallery"><img src="<?php echo img_path("destinations04.jpg") ?>" alt="" width="270" height="160" /></a>
-            </figure>
-            <div class="details">
-              <span class="price"><small>FROM</small>$290</span>
-              <h4 class="box-title"><a href="hotel-detailed.html">Crown Casino<small>ASUTRALIA</small></a></h4>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="container section">
+    <h2>Recent Travelo News</h2>
+    <div class="image-carousel style2" data-animation="slide" data-item-width="370" data-item-margin="30">
 
-  <!-- Honeymoon -->
-  <div class="honeymoon section global-map-area promo-box parallax" data-stellar-background-ratio="0.5">
-    <div class="container">
-      <div class="col-sm-6 content-section description pull-right">
-        <h1 class="title">Popular Destinations for Honeymoon</h1>
-        <p>Nunc cursus libero purusac congue arcu cursus utsed vitae pulvinar massa idporta neque purusac Etiam elerisque mi id faucibus iaculis vitae pulvinar.</p>
-        <div class="row places image-box style9">
-          <div class="col-xs-4">
-            <article class="box">
-              <figure>
-                <a href="hotel-list-view.html" title="" class="hover-effect yellow middle-block animated" data-animation-type="fadeInUp" data-animation-duration="1">
-                  <img src="<?php echo img_path("places01.jpg") ?>" alt="" width="306" height="170" /></a>
-              </figure>
-              <div class="details">
-                <h4 class="box-title">Paris<small>(990 PLACES)</small></h4>
-                <a href="hotel-list-view.html" title="" class="button">SEE ALL</a>
+      <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides image-box style10" style="width: 800%; -webkit-transition: 0.6s; transition: 0.6s; -webkit-transform: translate3d(-400px, 0px, 0px); transform: translate3d(-400px, 0px, 0px);">
+          <li class="box post" style="width: 370px; float: left; display: block;">
+            <figure>
+              <a href="pages-blog-read.html" class="hover-effect"><img src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/news1.png" alt="" draggable="false"></a>
+              <figcaption class="entry-date">
+                <label class="date">29</label>
+                <label class="month">Aug</label>
+              </figcaption>
+            </figure>
+            <div class="details">
+              <a href="pages-blog-read.html" class="button">MORE</a>
+              <h4 class="post-title entry-title">Single Image Post Title here</h4>
+              <div class="post-meta single-line-meta vcard">
+                By <span class="fn"><a rel="author" href="#" class="author">admin</a></span>
+                <span class="sep">|</span>
+                <a href="#" class="comment">1 COMMENT</a>
+                <span class="hidden updated">Aug 29, 2013</span>
               </div>
-            </article>
-          </div>
-          <div class="col-xs-4">
-            <article class="box">
-              <figure>
-                <a href="hotel-list-view.html" title="" class="hover-effect yellow middle-block animated" data-animation-type="fadeInUp" data-animation-duration="1" data-animation-delay="0.4"><img src="<?php echo img_path("places02.jpg") ?>" alt="" width="175" height="175" /></a>
-              </figure>
-              <div class="details">
-                <h4 class="box-title">Greece<small>(990 PLACES)</small></h4>
-                <a href="hotel-list-view.html" title="" class="button">SEE ALL</a>
+            </div>
+          </li>
+          <li class="box post" style="width: 370px; float: left; display: block;">
+            <figure>
+              <a href="pages-blog-read.html" class="hover-effect"><img src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/news2.png" alt="" draggable="false"></a>
+              <figcaption class="entry-date">
+                <label class="date">29</label>
+                <label class="month">Aug</label>
+              </figcaption>
+            </figure>
+            <div class="details">
+              <a href="pages-blog-read.html" class="button">MORE</a>
+              <h4 class="post-title entry-title">Image Gallery Post Title here</h4>
+              <div class="post-meta single-line-meta vcard">
+                By <span class="fn"><a rel="author" href="#" class="author">admin</a></span>
+                <span class="sep">|</span>
+                <a href="#" class="comment">1 COMMENT</a>
+                <span class="hidden updated">Aug 29, 2013</span>
               </div>
-            </article>
-          </div>
-          <div class="col-xs-4">
-            <article class="box">
-              <figure>
-                <a href="hotel-list-view.html" title="" class="hover-effect yellow middle-block animated" data-animation-type="fadeInUp" data-animation-duration="1" data-animation-delay="0.8"><img src="<?php echo img_path("places03.jpg") ?>" alt="" width="340" height="226" /></a>
-              </figure>
-              <div class="details">
-                <h4 class="box-title">Australia<small>(990 PLACES)</small></h4>
-                <a href="hotel-list-view.html" title="" class="button">SEE ALL</a>
+            </div>
+          </li>
+          <li class="box post" style="width: 370px; float: left; display: block;">
+            <figure>
+              <a href="pages-blog-read.html" class="hover-effect"><img src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/news3.png" alt="" draggable="false"></a>
+              <figcaption class="entry-date">
+                <label class="date">29</label>
+                <label class="month">Aug</label>
+              </figcaption>
+            </figure>
+            <div class="details">
+              <a href="pages-blog-read.html" class="button">MORE</a>
+              <h4 class="post-title entry-title">Single Image Post Title here</h4>
+              <div class="post-meta single-line-meta vcard">
+                By <span class="fn"><a rel="author" href="#" class="author">admin</a></span>
+                <span class="sep">|</span>
+                <a href="#" class="comment">1 COMMENT</a>
+                <span class="hidden updated">Aug 29, 2013</span>
               </div>
-            </article>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 image-container no-margin">
-        <img src="<?php echo img_path('couple.png') ?>" alt="" class="animated" data-animation-type="fadeInUp" data-animation-duration="2">
-      </div>
-    </div>
-  </div>
+            </div>
+          </li>
+          <li class="box post" style="width: 370px; float: left; display: block;">
+            <figure>
+              <a href="pages-blog-read.html" class="hover-effect"><img src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/news2.png" alt="" draggable="false"></a>
+              <figcaption class="entry-date">
+                <label class="date">29</label>
+                <label class="month">Aug</label>
+              </figcaption>
+            </figure>
+            <div class="details">
+              <a href="pages-blog-read.html" class="button">MORE</a>
+              <h4 class="post-title entry-title">Single Image Post Title here</h4>
+              <div class="post-meta single-line-meta vcard">
+                By <span class="fn"><a rel="author" href="#" class="author">admin</a></span>
+                <span class="sep">|</span>
+                <a href="#" class="comment">1 COMMENT</a>
+                <span class="hidden updated">Aug 29, 2013</span>
+              </div>
+            </div>
+          </li>
+        </ul></div><ol class="flex-control-nav flex-control-paging"><li><a class="">1</a></li><li><a class="flex-active">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div>
 
-  <!-- Did you Know? section -->
-  <div class="offers section">
-    <div class="container">
-      <h1 class="text-center">Did you know?</h1>
-      <p class="col-xs-9 center-block no-float text-center">Mauris ullamcorper nibh quis leo ultrices in hendrerit velit tristiqueut augue in nulla lacinia bibendum liberoras rutrum ac purus ut tristique.
-        Nullam placerat lacinia dolor quis pretium. Phasellus vitae lacinia quam, at pellentesque lorem. Sed euismod turpis quis mattis fringilla.</p>
-      <div class="row image-box style2">
-        <div class="col-md-6">
-          <article class="box">
-            <figure class="animated" data-animation-type="fadeInLeft" data-animation-duration="1">
-              <a href="#" title=""><img src="<?php echo img_path("offers01.jpg") ?>" alt="" width="272" height="192" /></a>
-            </figure>
-            <div class="details">
-              <h4>Hire Cars</h4>
-              <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id.</p>
-              <a href="#" title="" class="button">SEE ALL</a>
+    <div class="row block">
+      <div class="col-sm-6">
+        <h2>What Travelers Say?</h2>
+        <div class="testimonial style1 box">
+
+          <div class="testimonial-viewport" style="overflow: hidden; position: relative;"><ul class="slides " style="width: 600%; -webkit-transition: 0s; transition: 0s; -webkit-transform: translate3d(0px, 0px, 0px); transform: translate3d(0px, 0px, 0px);">
+              <li class="testimonial-active-slide" style="width: 520px; float: left; display: block; height: 219px;">
+                <p class="description">This is the 3rd time I’ve used Travelo website and telling you the truth their services are always realiable and it only takes few minutes to plan and finalize your entire trip using their extremely fast website and up to date listings. I’m super excited about my next trip to Paris.</p>
+                <div class="author clearfix">
+                  <a href="#"><img src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/author1.png" alt="" width="74" height="74" draggable="false"></a>
+                  <h5 class="name">Jessica Brown<small>guest</small></h5>
+                </div>
+              </li>
+              <li style="width: 520px; float: left; display: block; height: 219px;">
+                <p class="description">This is the 3rd time I’ve used Travelo website and telling you the truth their services are always realiable and it only takes few minutes to plan and finalize your entire trip using their extremely fast website and up to date listings. I’m super excited about my next trip to Paris.</p>
+                <div class="author clearfix">
+                  <a href="#"><img src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/author2.png" alt="" width="74" height="74" draggable="false"></a>
+                  <h5 class="name">Lisa Kimberly<small>guest</small></h5>
+                </div>
+              </li>
+              <li style="width: 520px; float: left; display: block; height: 219px;">
+                <p class="description">This is the 3rd time I’ve used Travelo website and telling you the truth their services are always realiable and it only takes few minutes to plan and finalize your entire trip using their extremely fast website and up to date listings. I’m super excited about my next trip to Paris.</p>
+                <div class="author clearfix">
+                  <a href="#"><img src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/author1.png" alt="" width="74" height="74" draggable="false"></a>
+                  <h5 class="name">Jessica Brown<small>guest</small></h5>
+                </div>
+              </li>
+            </ul></div><ol class="testimonial-control-nav testimonial-control-paging"><li><a class="testimonial-active">1</a></li><li><a>2</a></li><li><a>3</a></li></ol></div>
+      </div>
+      <div class="col-sm-6">
+        <h2>What Travelers Say?</h2>
+        <div class="testimonial style1 box">
+
+          <div class="testimonial-viewport" style="overflow: hidden; position: relative;"><ul class="slides " style="width: 600%; -webkit-transition: 0s; transition: 0s; -webkit-transform: translate3d(0px, 0px, 0px); transform: translate3d(0px, 0px, 0px);">
+              <li class="testimonial-active-slide" style="width: 520px; float: left; display: block; height: 219px;">
+                <p class="description">This is the 3rd time I’ve used Travelo website and telling you the truth their services are always realiable and it only takes few minutes to plan and finalize your entire trip using their extremely fast website and up to date listings. I’m super excited about my next trip to Paris.</p>
+                <div class="author clearfix">
+                  <a href="#"><img src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/author2.png" alt="" width="74" height="74" draggable="false"></a>
+                  <h5 class="name">Jessica Brown<small>guest</small></h5>
+                </div>
+              </li>
+              <li style="width: 520px; float: left; display: block; height: 219px;">
+                <p class="description">This is the 3rd time I’ve used Travelo website and telling you the truth their services are always realiable and it only takes few minutes to plan and finalize your entire trip using their extremely fast website and up to date listings. I’m super excited about my next trip to Paris.</p>
+                <div class="author clearfix">
+                  <a href="#"><img src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/author1.png" alt="" width="74" height="74" draggable="false"></a>
+                  <h5 class="name">Lisa Kimberly<small>guest</small></h5>
+                </div>
+              </li>
+              <li style="width: 520px; float: left; display: block; height: 219px;">
+                <p class="description">This is the 3rd time I’ve used Travelo website and telling you the truth their services are always realiable and it only takes few minutes to plan and finalize your entire trip using their extremely fast website and up to date listings. I’m super excited about my next trip to Paris.</p>
+                <div class="author clearfix">
+                  <a href="#"><img src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/author2.png" alt="" width="74" height="74" draggable="false"></a>
+                  <h5 class="name">Jessica Brown<small>guest</small></h5>
+                </div>
+              </li>
+            </ul></div><ol class="testimonial-control-nav testimonial-control-paging"><li><a class="testimonial-active">1</a></li><li><a>2</a></li><li><a>3</a></li></ol></div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <div class="icon-box style3 counters-box">
+            <div class="numbers">
+              <i class="soap-icon-places select-color"></i>
+              <span class="display-counter" data-value="3200">3200</span>
             </div>
-          </article>
+            <div class="description">Amazing Places To Visit</div>
+          </div>
         </div>
-        <div class="col-md-6">
-          <article class="box">
-            <figure class="animated" data-animation-type="fadeInLeft" data-animation-duration="1" data-animation-delay="0.4">
-              <a href="#" title=""><img src="<?php echo img_path("offers02.jpg") ?>" alt="" width="272" height="192" /></a>
-            </figure>
-            <div class="details">
-              <h4>Cruise Deals</h4>
-              <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id.</p>
-              <a href="#" title="" class="button">SEE ALL</a>
+        <div class="col-sm-6 col-md-3">
+          <div class="icon-box style3 counters-box">
+            <div class="numbers">
+              <i class="soap-icon-hotel skin-color"></i>
+              <span class="display-counter" data-value="5738">5738</span>
             </div>
-          </article>
+            <div class="description">5 Star Hotels To Stay</div>
+          </div>
         </div>
-        <div class="col-md-6">
-          <article class="box">
-            <figure class="animated" data-animation-type="fadeInLeft" data-animation-duration="1">
-              <a href="#" title=""><img src="<?php echo img_path("offers03.jpg") ?>" alt="" width="272" height="192" /></a>
-            </figure>
-            <div class="details">
-              <h4>Things To Do</h4>
-              <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id.</p>
-              <a href="#" title="" class="button">SEE ALL</a>
+        <div class="col-sm-6 col-md-3">
+          <div class="icon-box style3 counters-box">
+            <div class="numbers">
+              <i class="soap-icon-plane green-color"></i>
+              <span class="display-counter" data-value="4509">4509</span>
             </div>
-          </article>
+            <div class="description">Airlines To Travel the World</div>
+          </div>
         </div>
-        <div class="col-md-6">
-          <article class="box">
-            <figure class="animated" data-animation-type="fadeInLeft" data-animation-duration="1" data-animation-delay="0.4">
-              <a href="#" title=""><img src="<?php echo img_path("offers04.jpg") ?>" alt="" width="272" height="192" /></a>
-            </figure>
-            <div class="details">
-              <h4>Fly in Comfort</h4>
-              <p>Nunc cursus libero purus ac congue ar lorem cursus ut sed vitae pulvinar massa idend porta nequetiam elerisque mi id.</p>
-              <a href="#" title="" class="button">SEE ALL</a>
+        <div class="col-sm-6 col-md-3">
+          <div class="icon-box style3 counters-box">
+            <div class="numbers">
+              <i class="soap-icon-car red-color"></i>
+              <span class="display-counter" data-value="3250">3250</span>
             </div>
-          </article>
+            <div class="description">VIP Transport Options</div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- Features section -->
-  <div class="features section global-map-area parallax" data-stellar-background-ratio="0.5">
-    <div class="container">
-      <div class="row image-box style7">
-        <div class="col-sms-6 col-sm-6 col-md-3">
-          <article class="box">
-            <figure class="middle-block">
-              <img src="<?php echo img_path("1.jpg") ?>" alt="" class="middle-item" width="283" height="200" />
-              <span class="opacity-wrapper"></span>
-            </figure>
-            <div class="details">
-              <h4><a href="#">Best Price Guarantee</a></h4>
-              <p>
-                Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
-              </p>
+      <br>
+      <div class="global-map-area section parallax" data-stellar-background-ratio="0.5" style="background-position: 50% 118px;">
+        <div class="container description text-center">
+          <h1>How Travelo Works?</h1>
+          <br>
+          <div class="travelo-process">
+            <img src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/travelo_process.png" alt="">
+            <div class="process first icon-box style12">
+              <div class="details animated" data-animation-type="fadeInUp" data-animation-delay="1">
+                <h4>Explore Destinations</h4>
+                <p class="hidden-xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </div>
+              <div class="icon-wrapper animated" data-animation-type="slideInLeft" data-animation-delay="0">
+                <i class="soap-icon-beach circle"></i>
+              </div>
             </div>
-          </article>
-        </div>
-        <div class="col-sms-6 col-sm-6 col-md-3">
-          <article class="box">
-            <figure class="middle-block">
-              <img src="<?php echo img_path("2.jpg") ?>" alt="" class="middle-item" width="276" height="126" />
-              <span class="opacity-wrapper"></span>
-            </figure>
-            <div class="details">
-              <h4><a href="#">Travel Insurance</a></h4>
-              <p>
-                Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
-              </p>
+            <div class="process second icon-box style12">
+              <div class="icon-wrapper animated" data-animation-type="slideInRight" data-animation-delay="1.5">
+                <i class="soap-icon-availability circle"></i>
+              </div>
+              <div class="details animated" data-animation-type="fadeInUp" data-animation-delay="2.5">
+                <h4>Check Availability</h4>
+                <p class="hidden-xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </div>
             </div>
-          </article>
-        </div>
-        <div class="col-sms-6 col-sm-6 col-md-3">
-          <article class="box">
-            <figure class="middle-block">
-              <img src="<?php echo img_path("3.jpg") ?>" alt="" class="middle-item" width="284" height="189" />
-              <span class="opacity-wrapper"></span>
-            </figure>
-            <div class="details">
-              <h4><a href="#">Why Chose Us</a></h4>
-              <p>
-                Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
-              </p>
+            <div class="process third icon-box style12">
+              <div class="icon-wrapper animated" data-animation-type="slideInRight" data-animation-delay="2">
+                <i class="soap-icon-stories circle"></i>
+              </div>
+              <div class="details animated" data-animation-type="fadeInUp" data-animation-delay="3">
+                <h4>Book Online</h4>
+                <p class="hidden-xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </div>
             </div>
-          </article>
-        </div>
-        <div class="col-sms-6 col-sm-6 col-md-3">
-          <article class="box">
-            <figure class="middle-block">
-              <img src="<?php echo img_path("4.jpg") ?>" alt="" class="middle-item" width="274" height="142" />
-              <span class="opacity-wrapper"></span>
-            </figure>
-            <div class="details">
-              <h4><a href="#">Need Help?</a></h4>
-              <p>
-                Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam elerisque mi id faucibus iaculis vitae pulvinar.
-              </p>
+            <div class="process forth icon-box style12">
+              <div class="details animated" data-animation-type="fadeInUp" data-animation-delay="4.5">
+                <h4>Get Ready to Fly</h4>
+                <p class="hidden-xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              </div>
+              <div class="icon-wrapper animated" data-animation-type="slideInLeft" data-animation-delay="3.5">
+                <i class="soap-icon-plane-left takeoff-effect1 circle"></i>
+              </div>
             </div>
-          </article>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
+      <br>
+      <!-- Did you Know? section -->
+      <div class="block image-box style6">
+        <h1>Style 06</h1>
+        <article class="box">
+          <figure class="col-md-5">
+            <a href="#" title="" class="middle-block middle-block-auto-height" style="position: relative; height: 149px;"><img class="middle-item" src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/style1.png" alt="" width="476" height="318" style="position: absolute; top: 50%; margin-top: -116px; left: 50%; margin-left: -250px;"></a>
+          </figure>
+          <div class="details col-md-offset-5">
+            <h4 class="box-title">Who We Are?</h4>
+            <p>Vivamus a mauris vel nunc tristique volutpat. Aenean eu faucibus enim. Aenean blandit arcu lectus, in cursus elit porttitor non. Curabitur risus eros, mattis vitae nisl consequat, tincidunt commodo purus. Maecenas eu risus ac risus tempus iaculis. Duis cursus lectus sed dui imperdiet, id pharetra nunc ullamcorper. Donec luctus blandit metus, sed ultrices ipsum facilisis sit amet. Morbi congue ligula sit amet urna tincidunt.</p>
+          </div>
+        </article>
+        <article class="box">
+          <figure class="col-md-5 pull-right middle-block middle-block-auto-height" style="position: relative; height: 149px;">
+            <a href="#" title=""><img class="middle-item" src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/style2.png" alt="" width="476" height="318" style="position: absolute; top: 50%; margin-top: -116px; left: 50%; margin-left: -250px;"></a>
+          </figure>
+          <div class="details col-md-7">
+            <h4 class="box-title">What We Do?</h4>
+            <p>Vivamus a mauris vel nunc tristique volutpat. Aenean eu faucibus enim. Aenean blandit arcu lectus, in cursus elit porttitor non. Curabitur risus eros, mattis vitae nisl consequat, tincidunt commodo purus. Maecenas eu risus ac risus tempus iaculis. Duis cursus lectus sed dui imperdiet, id pharetra nunc ullamcorper. Donec luctus blandit metus, sed ultrices ipsum facilisis sit amet. Morbi congue ligula sit amet urna tincidunt.</p>
+          </div>
+        </article>
+        <article class="box">
+          <figure class="col-md-5">
+            <a href="#" title="" class="middle-block middle-block-auto-height" style="position: relative; height: 149px;"><img class="middle-item" src="http://medtourismvietnam.com/addons/shared_addons/themes/medical/img/style3.png" alt="" width="476" height="318" style="position: absolute; top: 50%; margin-top: -116px; left: 50%; margin-left: -250px;"></a>
+          </figure>
+          <div class="details col-md-offset-5">
+            <h4 class="box-title">How Travelo Work?</h4>
+            <p>Vivamus a mauris vel nunc tristique volutpat. Aenean eu faucibus enim. Aenean blandit arcu lectus, in cursus elit porttitor non. Curabitur risus eros, mattis vitae nisl consequat, tincidunt commodo purus. Maecenas eu risus ac risus tempus iaculis. Duis cursus lectus sed dui imperdiet, id pharetra nunc ullamcorper. Donec luctus blandit metus, sed ultrices ipsum facilisis sit amet. Morbi congue ligula sit amet urna tincidunt.</p>
+          </div>
+        </article>
+      </div>
+    </div></div>
+
 </section>
-<?php echo js("page-loading") ?>
+<?php //echo js("page-loading") ?>
