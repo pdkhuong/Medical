@@ -21,7 +21,6 @@ class Page_type_m extends MY_Model
                 ->limit(1)
                 ->where('id', $id)
                 ->get($this->_table)->row();
-    
         if ( ! $pt) return null;
 
         // Do we have things saved as files? If

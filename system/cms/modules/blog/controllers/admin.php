@@ -86,7 +86,7 @@ class Admin extends Admin_Controller
 		$this->lang->load(array('blog', 'categories'));
 
 		$this->load->library(array('keywords/keywords', 'form_validation'));
-
+    $this->load->library('files/files');
 		$_categories = array();
 		if ($categories = $this->blog_categories_m->order_by('title')->get_all())
 		{
@@ -159,7 +159,6 @@ class Admin extends Admin_Controller
 	 */
 	public function create()
 	{
-
 		// They are trying to put this live
 		if ($this->input->post('status') == 'live')
 		{
@@ -182,8 +181,16 @@ class Admin extends Admin_Controller
 		// Get the validation for our custom blog fields.
 		$blog_validation = $this->streams->streams->validation_array($stream->stream_slug, $stream->stream_namespace, 'new');
 		
+    $file_validation = array(
+			array(
+				'field' => 'image',
+				'label' => lang('global:image'),
+				'rules' => 'callback__check_file_upload'
+			),
+		);
+    
 		// Combine our validation rules.
-		$rules = array_merge($this->validation_rules, $blog_validation);
+		$rules = array_merge($this->validation_rules, $blog_validation, $file_validation);
 
 		// Set our validation rules
 		$this->form_validation->set_rules($rules);
@@ -195,8 +202,7 @@ class Admin extends Admin_Controller
 		else
 		{
 			$created_on = now();
-		}
-
+    }
 		if ($this->form_validation->run())
 		{
 			// Insert a new blog entry.
@@ -216,7 +222,10 @@ class Admin extends Admin_Controller
 				'parsed'           => ($this->input->post('type') == 'markdown') ? parse_markdown($this->input->post('body')) : '',
 				'preview_hash'     => $hash
 			);
-
+      $uploadResult = Files::upload(FILE_BLOG_FOLDER_ID, null, 'image');
+      if($uploadResult['status']==1){
+        $extra['image'] = $uploadResult['data']['id'];
+      }
 			if ($id = $this->streams->entries->insert_entry($_POST, 'blog', 'blogs', array('created'), $extra))
 			{
 				$this->pyrocache->delete_all('blog_m');
@@ -236,7 +245,6 @@ class Admin extends Admin_Controller
 			{
 				$this->session->set_flashdata('error', lang('blog:post_add_error'));
 			}
-
 			// Redirect back to the form or main page
 			($this->input->post('btnAction') == 'save_exit') ? redirect('admin/blog') : redirect('admin/blog/edit/'.$id);
 		}
@@ -271,7 +279,7 @@ class Admin extends Admin_Controller
 			->set('post', $post)
 			->build('admin/form');
 	}
-
+ 
 	/**
 	 * Edit blog post
 	 *
@@ -324,9 +332,15 @@ class Admin extends Admin_Controller
 				'rules' => 'trim|required|alpha_dot_dash|max_length[100]|callback__check_slug['.$id.']'
 			),
 		));
-
+    $file_validation = array(
+			array(
+				'field' => 'image',
+				'label' => lang('global:image'),
+				'rules' => 'callback__check_file_upload'
+			),
+		);
 		// Merge and set our validation rules
-		$this->form_validation->set_rules(array_merge($this->validation_rules, $blog_validation));
+		$this->form_validation->set_rules(array_merge($this->validation_rules, $blog_validation, $file_validation));
 
 		$hash = $this->input->post('preview_hash');
 
@@ -361,7 +375,10 @@ class Admin extends Admin_Controller
 				'parsed'           => ($this->input->post('type') == 'markdown') ? parse_markdown($this->input->post('body')) : '',
 				'preview_hash'     => $hash,
 			);
-
+      $uploadResult = Files::upload(FILE_BLOG_FOLDER_ID, null, 'image');
+      if($uploadResult['status']==1){
+        $extra['image'] = $uploadResult['data']['id'];
+      }
 			if ($this->streams->entries->update_entry($id, $_POST, 'blog', 'blogs', array('updated'), $extra))
 			{
 				$this->session->set_flashdata(array('success' => sprintf(lang('blog:edit_success'), $this->input->post('title'))));
@@ -604,4 +621,11 @@ class Admin extends Admin_Controller
 	{
 		return md5(microtime() + mt_rand(0, 1000));
 	}
+  public function _check_file_upload(){
+    if(isset($_FILES['image']['error']) && $_FILES['image']['tmp_name'] && $_FILES['image']['error']){
+      $this->form_validation->set_message('_check_file_upload', 'Cannot upload file');
+      return false;
+    }
+    return true;
+  }
 }

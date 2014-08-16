@@ -4,22 +4,21 @@
 <!--[if IE 9]>          <html class="ie ie9"> <![endif]-->
 <!--[if gt IE 9]><!-->  <html> <!--<![endif]-->
 <head>
-    <title><?php echo $template['title']?></title>
+    <title>{{ template:title }}</title>
     <meta charset="utf-8">
     <meta name="keywords" content="keywords" />
     <meta name="description" content="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php theme_partial('css')?>
-    <?php theme_partial('top_script')?>
+    {{ theme:partial name="css" }}
+    {{ theme:partial name="top_script" }}
 </head>
 <body>
     <div id="page-wrapper">
-        <?php theme_partial('header')?>
-        <?php echo $template['body']; ?>  
-        <?php theme_partial('footer')?>
+        {{ theme:partial name="header" }}
+        {{ template:body }} 
+        {{ theme:partial name="footer" }}
     </div>
-    <?php theme_partial('bottom_script')?>
-  
+     {{ theme:partial name="bottom_script" }}
 </body>
 </html>
 

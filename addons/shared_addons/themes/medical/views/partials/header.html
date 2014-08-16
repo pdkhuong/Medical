@@ -1,0 +1,34 @@
+<header id="header" class="navbar-static-top">
+  <div class="topnav hidden-xs">
+    <div class="container">
+      <ul class="quick-menu pull-left">
+        <li><a href="<?php echo base_url().'edit-profile'?>">MY ACCOUNT</a></li>
+      </ul>
+      <ul class="quick-menu pull-right">
+        <?php if($this->current_user):?>
+        <li><a href="<?php echo base_url().'users/logout'?>">LOGOUT</a></li>
+        <?php else:?>
+        <li><a href="<?php echo base_url().'users/login'?>">LOGIN</a></li>
+        <li><a href="<?php echo base_url().'users/register'?>">SIGNUP</a></li>
+        <?php endif;?>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main-header">
+
+    <a href="#mobile-menu-01" data-toggle="collapse" class="mobile-menu-toggle">
+      Mobile Menu Toggle
+    </a>
+
+    <div class="container">
+      <h1 class="logo navbar-brand">
+        <a href="index.html" title="Travelo - home">
+          <img src="<?php echo img_path("logo.png") ?>" alt="Travelo HTML5 Template" />
+        </a>
+      </h1>
+        {{ theme:partial name="main_menu" }}
+    </div>
+      {{ theme:partial name="mobile_menu" }}
+  </div>
+</header>

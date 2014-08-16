@@ -195,3 +195,6 @@ define('CMS_EDITION', 'Community');
 define('CMS_DATE', '06/07/2014');
 
 /* End of file constants.php */
+
+define('FILE_BLOG_FOLDER_ID', 2);
+define('BLOG_CATEGORY_TOP', 1);

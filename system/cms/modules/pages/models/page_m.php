@@ -210,7 +210,6 @@ class Page_m extends MY_Model
 		// ---------------------------------
 		// End Legacy Logic
 		// ---------------------------------
-
 		// Wrap the page with a page layout, otherwise use the default 'Home' layout
 		if ( ! $page->layout = $this->pyrocache->model('page_type_m', 'get', array($page->type_id)))
 		{

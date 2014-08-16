@@ -14,7 +14,7 @@ class Public_Controller extends MY_Controller
 	 */
 	public function __construct()
 	{
-    $this->template->set_layout('default'); 
+    //$this->template->set_layout('default'); 
 		parent::__construct();
 
 		$this->benchmark->mark('public_controller_start');

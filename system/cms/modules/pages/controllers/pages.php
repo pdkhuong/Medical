@@ -101,10 +101,8 @@ class Pages extends Public_Controller
 
 		// GET THE PAGE ALREADY. In the event of this being the home page $url_segments will be null
 		$page = $this->page_m->get_by_uri($url_segments, true);
-
 		// Setting this so others may use it.
 		$this->template->set('page', $page);
-
 		// If page is missing or not live (and the user does not have permission) show 404
 		if ( ! $page or ($page->status == 'draft' and ! $this->permission_m->has_role(array('put_live', 'edit_live'))))
 		{
@@ -275,13 +273,11 @@ class Pages extends Public_Controller
 		// more than an echo of $page->layout->body and the
 		// comments after it (if the page has comments).
 		$html = $this->template->load_view('pages/page', array('page' => $page), false);
-
 		$view = $this->parser->parse_string($html, $page, true, false, array(
 			'stream' => $stream->stream_slug,
 			'namespace' => $stream->stream_namespace,
 			'id_name' => 'entry_id'
 		));
-
 		if ($page->slug == '404')
 		{
 			log_message('error', 'Page Missing: '.$this->uri->uri_string());
@@ -289,9 +285,9 @@ class Pages extends Public_Controller
 			// things behave a little differently when called by MX from MY_Exceptions' show_404()
 			exit($this->template->build($view, array('page' => $page), false, false, true, $template));
 		}
-
 		$this->template
 					->build($view, array('page' => $page), false, false, true, $template);
+    
 	}
 
     // --------------------------------------------------------------------------

@@ -27,7 +27,10 @@
 					<label for="title"><?php echo lang('global:title') ?> <span>*</span></label>
 					<div class="input"><?php echo form_input('title', htmlspecialchars_decode($post->title), 'maxlength="100" id="title"') ?></div>
 				</li>
-	
+        <li>
+					<label for="title"><?php echo lang('global:image') ?></label>
+					<div class="input"><?php echo form_upload('image') ?></div>
+				</li>
 				<li>
 					<label for="slug"><?php echo lang('global:slug') ?> <span>*</span></label>
 					<div class="input"><?php echo form_input('slug', $post->slug, 'maxlength="100" class="width-20"') ?></div>
