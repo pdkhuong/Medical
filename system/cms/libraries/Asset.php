@@ -802,7 +802,9 @@ class Asset {
 
 		return $files;
 	}
-
+  public static function get_asset_url(){
+    return self::$asset_url;
+  }
 
 	/**
 	 * Can be used to add deps to a group.

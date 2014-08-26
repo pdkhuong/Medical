@@ -198,3 +198,5 @@ define('CMS_DATE', '06/07/2014');
 
 define('FILE_BLOG_FOLDER_ID', 2);
 define('BLOG_CATEGORY_TOP', 1);
+define("STATIC_PATH", BASE_URL."addons/shared_addons/themes/medicalV2");
+define("BASE_UPLOAD_PATH", BASE_URL."uploads");

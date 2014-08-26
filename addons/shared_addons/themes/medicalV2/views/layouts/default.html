@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>{{ template:title }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        {{ theme:partial name="css" }}
+        {{ theme:partial name="top_script" }}
+    </head>
+    <body class="home blog logged-in admin-bar no-customize-support no-tablet-sticky-header no-mobile-sticky-header no-mobile-totop" data-spy="scroll">
+        <div id="wrapper" class="">
+            {{ theme:partial name="header" }}
+            <div id="sliders-container">
+            </div>
+            
+            <div id="main" class="clearfix " style="">
+                <div class="avada-row" style="">		
+                    <div id="content" class="full-width">
+                        {{ template:body }} 
+                    </div>
+                </div>
+            </div>
+            {{ theme:partial name="footer" }}
+        </div><!-- wrapper -->
+    {{ theme:partial name="bottom_script" }}
+    </body>
+</html>

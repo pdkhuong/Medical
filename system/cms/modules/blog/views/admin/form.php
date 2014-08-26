@@ -27,8 +27,12 @@
 					<label for="title"><?php echo lang('global:title') ?> <span>*</span></label>
 					<div class="input"><?php echo form_input('title', htmlspecialchars_decode($post->title), 'maxlength="100" id="title"') ?></div>
 				</li>
+        <?php if($post->image):?>
+        <label>Old image:</label>
+        <img src="<?php echo getImageThumb($post->image, 100, 100) ?>" />
+        <?php endif;?>
         <li>
-					<label for="title"><?php echo lang('global:image') ?></label>
+					<label for="title"><?php echo lang('global:image') ?><span>*</span></label>
 					<div class="input"><?php echo form_upload('image') ?></div>
 				</li>
 				<li>

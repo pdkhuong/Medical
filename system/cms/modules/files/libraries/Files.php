@@ -353,28 +353,30 @@ class Files
 		session_write_close();
 
 		$folder = ci()->file_folders_m->get($folder_id);
-
+    
 		if ($folder)
 		{
 			ci()->load->library('upload');
-
+      $fileExt = ci()->upload->get_extension(self::$_filename);
+      $fileUniqId = substr(md5(microtime() . self::$_filename . $i++), 0, 12).substr($fileExt,1);
+      
 			$upload_config = array(
 				'upload_path'	=> self::$path,
-				'file_name'		=> $replace_file ? $replace_file->filename : self::$_filename,
+				'file_name'		=> $replace_file ? $replace_file->filename : $fileUniqId.$fileExt,//self::$_filename,
 				// if we want to replace a file, the file name should already be encrypted, the option was true then
+        'overwrite'=>true,
+        'name'=>self::$_filename,
 				'encrypt_name'	=> (config_item('files:encrypt_filename') && ! $replace_file) ? TRUE : FALSE
 			);
 
 			// If we don't have allowed types set, we'll set it to the
 			// current file's type.
 			$upload_config['allowed_types'] = ($allowed_types) ? $allowed_types : self::$_ext;
-
 			ci()->upload->initialize($upload_config);
 
 			if (ci()->upload->do_upload($field))
 			{
 				$file = ci()->upload->data();
-
 				$data = array(
 					'folder_id'		=> (int) $folder_id,
 					'user_id'		=> (int) ci()->current_user->id,
@@ -417,11 +419,11 @@ class Files
 				}
 				else
 				{
-					$data['id'] = substr(md5(microtime() . $data['filename']), 0, 15);
+					$data['id'] = $fileUniqId;
 					$i = 0;
 					while(ci()->file_m->exists($data['id']))
 					{
-					    $data['id'] = substr(md5(microtime() . $data['filename'] . $i++), 0, 15);
+					    $data['id'] = $fileUniqId;
 					}
 					$file_id = $data['id'];
 					ci()->file_m->insert($data);

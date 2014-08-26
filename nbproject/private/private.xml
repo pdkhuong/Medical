@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp/htdocs/medical/system/cms/config/constants.php</file>
-            <file>file:/D:/xampp/htdocs/medical/system/cms/modules/blog/views/admin/form.php</file>
-            <file>file:/D:/xampp/htdocs/medical/system/cms/config/database.php</file>
-            <file>file:/D:/xampp/htdocs/medical/system/cms/modules/files/libraries/Files.php</file>
-            <file>file:/D:/xampp/htdocs/medical/system/cms/modules/blog/controllers/admin.php</file>
+            <file>file:/D:/xampp/htdocs/medical/addons/shared_addons/themes/medicalV2/views/partials/top_script.html</file>
+            <file>file:/D:/xampp/htdocs/medical/system/cms/helpers/MY_common_helper.php</file>
+            <file>file:/D:/xampp/htdocs/medical/addons/shared_addons/themes/medicalV2/views/partials/header.html</file>
+            <file>file:/D:/xampp/htdocs/medical/addons/shared_addons/themes/medicalV2/views/partials/bottom_script.html</file>
+            <file>file:/D:/xampp/htdocs/medical/addons/shared_addons/themes/medicalV2/views/layouts/default.html</file>
         </group>
     </open-files>
 </project-private>

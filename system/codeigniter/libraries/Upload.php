@@ -274,16 +274,13 @@ class CI_Upload {
 			$this->set_error('upload_invalid_dimensions');
 			return FALSE;
 		}
-
 		// Sanitize the file name for security
 		$this->file_name = $this->clean_file_name($this->file_name);
-
 		// Truncate the file name if it's too long
 		if ($this->max_filename > 0)
 		{
 			$this->file_name = $this->limit_filename_length($this->file_name, $this->max_filename);
 		}
-
 		// Remove white spaces in the name
 		if ($this->remove_spaces === TRUE)
 		{
@@ -297,7 +294,6 @@ class CI_Upload {
 		 * If it returns false there was a problem.
 		 */
 		$this->orig_name = $this->file_name;
-
 		if ($this->overwrite === FALSE)
 		{
 			$this->file_name = $this->set_filename($this->upload_path, $this->file_name);
@@ -307,7 +303,6 @@ class CI_Upload {
 				return FALSE;
 			}
 		}
-
 		/*
 		 * Run the file through the XSS hacking filter
 		 * This helps prevent malicious code from being

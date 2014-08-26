@@ -185,7 +185,7 @@ class Admin extends Admin_Controller
 			array(
 				'field' => 'image',
 				'label' => lang('global:image'),
-				'rules' => 'callback__check_file_upload'
+				'rules' => 'callback__check_image_upload[0]'
 			),
 		);
     
@@ -290,7 +290,6 @@ class Admin extends Admin_Controller
 		$id or redirect('admin/blog');
 
 		$post = $this->blog_m->get($id);
-		
 		// They are trying to put this live
 		if ($post->status != 'live' and $this->input->post('status') == 'live')
 		{
@@ -336,7 +335,7 @@ class Admin extends Admin_Controller
 			array(
 				'field' => 'image',
 				'label' => lang('global:image'),
-				'rules' => 'callback__check_file_upload'
+				'rules' => 'callback__check_image_upload['.$id.']'
 			),
 		);
 		// Merge and set our validation rules
@@ -621,9 +620,13 @@ class Admin extends Admin_Controller
 	{
 		return md5(microtime() + mt_rand(0, 1000));
 	}
-  public function _check_file_upload(){
-    if(isset($_FILES['image']['error']) && $_FILES['image']['tmp_name'] && $_FILES['image']['error']){
-      $this->form_validation->set_message('_check_file_upload', 'Cannot upload file');
+  public function _check_image_upload($image='', $id=0){
+    if(empty($id) && (!isset($_FILES['image']['tmp_name']) || empty($_FILES['image']['tmp_name']))){
+      $this->form_validation->set_message('_check_image_upload', 'Please upload Image');
+      return false;
+    }
+    if(isset($_FILES['image']['error']) && $_FILES['image']['error']!=0 && $_FILES['image']['error']!=4){
+      $this->form_validation->set_message('_check_image_upload', 'Cannot upload file');
       return false;
     }
     return true;

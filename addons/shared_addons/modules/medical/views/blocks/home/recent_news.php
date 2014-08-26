@@ -1,4 +1,4 @@
-<?php if($data):?>
+<?php if(0):?>
 <h2>Recent Travelo News</h2>
 <div class="image-carousel style2" data-animation="slide" data-item-width="370" data-item-margin="30">
   <ul class="slides image-box style10">
