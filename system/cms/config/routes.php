@@ -57,4 +57,6 @@ $route['edit-profile']	                    = 'users/edit';
 
 $route['sitemap.xml']                       = 'sitemap/xml';
 
+$route['home/delete-cache']	                    = 'medical/home/test';
+
 /* End of file routes.php */

@@ -30,7 +30,7 @@
       $this->pyrocache->delete_all('streams_m');
       $this->pyrocache->delete_all('theme_m');
       $this->pyrocache->delete_all('image_files');
-      
+      echo "deleted!";
     }
 
   }
