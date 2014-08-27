@@ -4,12 +4,12 @@
   class Home extends Public_Controller {
 
     public function __construct() {
+      
       $this->load->model('fe_blog_m');
       parent::__construct();
     }
 
     function index() {
-    
       $data = array();
       /*$blogs = $this->fe_blog_m->get_all_by("category_id=".BLOG_CATEGORY_TOP, 0, 15);
       $data['block_blog'] = $this->load->view("blocks/home/recent_news", array('data'=>$blogs), true);
