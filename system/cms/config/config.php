@@ -398,11 +398,13 @@ $config['modules_locations'] = array(
 
 $config['medical']['banner_video'] = array(
   array(
-    'mp4'=>BASE_URL."uploads/video1.mp4",
-    'webm'=>BASE_URL."uploads/video1.webm",
+    'mp4'  => BASE_URL."uploads/video1.mp4",
+    'webm' => BASE_URL."uploads/video1.webm",
+    'cover' => BASE_URL."uploads/cover_video1.jpg",
   ),
   array(
     'mp4'=>BASE_URL."uploads/video2.mp4",
     'webm'=>BASE_URL."uploads/video2.webm",
+    'cover' => BASE_URL."uploads/cover_video2.jpg",
   )
 );
