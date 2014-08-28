@@ -16,6 +16,17 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`medical_v1` /*!40100 DEFAULT CHARACTER 
 
 USE `medical_v1`;
 
+/*Table structure for table `contact` */
+
+DROP TABLE IF EXISTS `contact`;
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(50) DEFAULT NULL,
+  `message` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 /*Table structure for table `core_settings` */
 
 DROP TABLE IF EXISTS `core_settings`;
@@ -96,7 +107,7 @@ CREATE TABLE `default_blog` (
   `preview_hash` char(32) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `image` char(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Table structure for table `default_blog_categories` */
 
@@ -487,8 +498,8 @@ CREATE TABLE `default_profiles` (
   `ordering_count` int(11) DEFAULT NULL,
   `user_id` int(11) unsigned NOT NULL,
   `display_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `first_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `last_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `first_name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `last_name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `company` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lang` varchar(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'en',
   `bio` text COLLATE utf8_unicode_ci,
@@ -502,9 +513,11 @@ CREATE TABLE `default_profiles` (
   `postcode` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `website` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `updated_on` int(11) unsigned DEFAULT NULL,
+  `oauth_uid` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `oauth_provider` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Table structure for table `default_redirects` */
 
@@ -539,7 +552,7 @@ CREATE TABLE `default_search_index` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique` (`module`,`entry_key`,`entry_id`(190)),
   FULLTEXT KEY `full search` (`title`,`description`,`keywords`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Table structure for table `default_settings` */
 
@@ -600,7 +613,7 @@ CREATE TABLE `default_users` (
   `remember_code` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Registered User Information';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Registered User Information';
 
 /*Table structure for table `default_variables` */
 

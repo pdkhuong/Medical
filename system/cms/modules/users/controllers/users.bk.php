@@ -231,6 +231,11 @@ class Users extends Public_Controller
 				'label' => lang('global:email'),
 				'rules' => 'required|max_length[60]|valid_email|callback__email_check',
 			),
+			array(
+				'field' => 'username',
+				'label' => lang('user:username'),
+				'rules' => Settings::get('auto_username') ? '' : 'required|alpha_dot_dash|min_length[3]|max_length[20]|callback__username_check',
+			),
 		);
 
 		// --------------------------------
@@ -262,6 +267,7 @@ class Users extends Public_Controller
 		// Get user profile data. This will be passed to our
 		// streams insert_entry data in the model.
 		$assignments = $this->streams->streams->get_assignments('profiles', 'users');
+
 		// This is the required profile data we have from
 		// the register form
 		$profile_data = array();
@@ -290,13 +296,12 @@ class Users extends Public_Controller
 		{
 			$user->{$rule['field']} = $this->input->post($rule['field']) ? escape_tags($this->input->post($rule['field'])) : null;
 		}
+
 		// Are they TRYing to submit?
 		if ($_POST)
 		{
-      $validatePassword = '';
-      if($_POST['password']!=$_POST['retype_password']){
-        $this->template->error_string = 'Password and repeat password not equal';
-      }elseif ($this->form_validation->run()){
+			if ($this->form_validation->run())
+			{
 				// Check for a bot usin' the old fashioned
 				// don't fill this input in trick.
 				if (escape_tags($this->input->post('d0ntf1llth1s1n')) !== ' ')
@@ -378,6 +383,7 @@ class Users extends Public_Controller
 				// We are registering with a null group_id so we just
 				// use the default user ID in the settings.
 				$id = $this->ion_auth->register($username, $password, $email, null, $profile_data);
+
 				// Try to create the user
 				if ($id > 0)
 				{
@@ -386,16 +392,12 @@ class Users extends Public_Controller
 					$user->display_name = $username;
 					$user->email = $email;
 					$user->password = $password;
-          $user->active = 1;
 
-          
 					// trigger an event for third party devs
 					Events::trigger('post_user_register', $id);
-          $this->session->set_flashdata('success', "Register completed");
-          redirect('users/login');
-          
+
 					/* send the internal registered email if applicable */
-					/*if (Settings::get('registered_email'))
+					if (Settings::get('registered_email'))
 					{
 						$this->load->library('user_agent');
 
@@ -427,10 +429,10 @@ class Users extends Public_Controller
 					{
 						$this->ion_auth->deactivate($id);
 
-						// show that admin needs to activate your account 
+						/* show that admin needs to activate your account */
 						$this->session->set_flashdata('notice', lang('user:activation_by_admin_notice'));
-						redirect('users/register'); // bump it to show the flash data
-					}*/
+						redirect('users/register'); /* bump it to show the flash data */
+					}
 				}
 
 				// Can't create the user, show why
@@ -878,7 +880,7 @@ class Users extends Public_Controller
 		}
 
 		return true;
-  }
+	}
   
 
 }
