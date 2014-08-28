@@ -11,8 +11,9 @@
 
     function index() {
       $data = array();
-      /*$blogs = $this->fe_blog_m->get_all_by("category_id=".BLOG_CATEGORY_TOP, 0, 15);
-      $data['block_blog'] = $this->load->view("blocks/home/recent_news", array('data'=>$blogs), true);
+      $blogs = $this->fe_blog_m->get_all_by('', 0, 8);
+      $data['block_blog'] = $this->load->view("blocks/home/top_blog", array('data'=>$blogs), true);
+      /*
       $data['block_why_choose'] = $this->load->view("blocks/home/why_choose", array(), true);
       $data['block_traveller_say'] = $this->load->view("blocks/home/traveller_say", array(), true);
       $data['block_visit'] = $this->load->view("blocks/home/visit", array(), true);

@@ -342,13 +342,13 @@ class CI_Session extends CI_Driver_Library {
 		{
 			$newdata = array($newdata => $newval);
 		}
+
 		// Prepend each key name and set value
 		if (count($newdata) > 0)
 		{
 			foreach ($newdata as $key => $val)
 			{
-				//$flashdata_key = self::FLASHDATA_KEY.self::FLASHDATA_NEW.$key;
-        $flashdata_key = self::FLASHDATA_KEY.$key;
+				$flashdata_key = self::FLASHDATA_KEY.self::FLASHDATA_NEW.$key;
 				$this->set_userdata($flashdata_key, $val);
 			}
 		}
@@ -384,11 +384,8 @@ class CI_Session extends CI_Driver_Library {
 	public function flashdata($key)
 	{
 		// Prepend key and retrieve value
-		//$flashdata_key = self::FLASHDATA_KEY.self::FLASHDATA_OLD.$key;
-    $flashdata_key = self::FLASHDATA_KEY.$key;
-    $msg = $this->userdata($flashdata_key);
-    //$this->unset_userdata($flashdata_key);
-		return $msg;
+		$flashdata_key = self::FLASHDATA_KEY.self::FLASHDATA_OLD.$key;
+		return $this->userdata($flashdata_key);
 	}
 
 	// ------------------------------------------------------------------------

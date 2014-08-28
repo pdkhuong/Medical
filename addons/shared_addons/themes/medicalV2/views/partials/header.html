@@ -7,94 +7,10 @@
                         <img src="<?php echo file_path('images/logo.png')?>" alt="test" class="normal_logo" />
                     </a>
                 </div>
-
                 <nav id="nav" class="nav-holder" data-height="83px">
-                    
-                    <ul class="navigation menu fusion-navbar-nav">
-                        <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-                            <a href="/about-us" aria-haspopup="true">About us 
-                                <span class="caret"></span>
-                            </a>
-                        </li>
-                        <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-                            <a href="/dental" aria-haspopup="true">Dental
-                                <span class="caret"></span>
-                            </a>
-                        </li>
-                        <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-                            <a href="/cosmetic-laser" aria-haspopup="true">Cosmetic laser
-                                <span class="caret"></span>
-                            </a>
-                        </li>
-                        <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-                            <a href="/our-doctors" aria-haspopup="true">Our doctors
-                                <span class="caret"></span>
-                            </a>
-                        </li>
-                        
-                        <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-                            <a href="/dental-price-list" aria-haspopup="true">Price list 
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                                    <a href="/dental-price-list" aria-haspopup="true">Dental</a>
-                                </li>
-                                
-                                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                                    <a href="/cosmetic-laser-price-list" aria-haspopup="true">Cosmetic laser</a>
-                                </li>
-                            </ul>
-                        </li>
-                        
-                        <!--dynamic-->
-                        <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-                            <a href="/dental-reviews" aria-haspopup="true">Reviews
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                                    <a href="/dental-reviews" aria-haspopup="true">Dental</a>
-                                </li>
-                                
-                                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                                    <a href="/cosmetic-laser-reviews" aria-haspopup="true">Cosmetic laser</a>
-                                </li>
-                            </ul>
-                        </li>
-                        
-                        <!--dynamic blog-->
-                        <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-                            <a href="/accommodation-travel-guide" aria-haspopup="true">Travel guide
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                                    <a href="/accommodation-travel-guide" aria-haspopup="true">Accommodation</a>
-                                </li>
-                                
-                                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                                    <a href="/pickup-service-travel-guide" aria-haspopup="true">Pickup service</a>
-                                </li>
-                                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                                    <a href="/tourism-service-travel-guide" aria-haspopup="true">Tourism service</a>
-                                </li>
-                                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                                    <a href="/visa-requirement-travel-guide" aria-haspopup="true">Visa requirement</a>
-                                </li>
-                            </ul>
-                        </li>
-                        
-                        <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-                            <a href="/blogs" aria-haspopup="true">Blog
-                                <span class="caret"></span>
-                            </a>
-                        </li>
-                        
-                    </ul> 
+                    {{ theme:partial name="main_menu" }}
                 </nav>
                 <div class="mobile-nav-holder main-menu"></div>
-
             </div>
         </header>
     </div>				
@@ -109,11 +25,7 @@
                 </a>
             </div>
             <nav id="sticky-nav" class="nav-holder">
-                <ul class="navigation menu fusion-navbar-nav">
-                    <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-                        <a href="http://theme-fusion.com/avada/home-version-6/#" aria-haspopup="true">Sliders <span class="caret"></span></a>
-                        <ul class="sub-menu"><li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu"><a href="http://theme-fusion.com/avada/home-version-6/#" aria-haspopup="true">Layer Slider</a><ul class="sub-menu"><li id="menu-item-3762" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3762"><a href="http://theme-fusion.com/avada/3d-2d-transitions/" aria-haspopup="true">3D &amp; 2D Transitions</a></li><li id="menu-item-3760" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3760"><a href="http://theme-fusion.com/avada/full-width-2/" aria-haspopup="true">Full Width</a></li><li id="menu-item-5077" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5077"><a href="http://theme-fusion.com/avada/captions-2/" aria-haspopup="true">Captions</a></li><li id="menu-item-3761" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3761"><a href="http://theme-fusion.com/avada/video-gallery-slider/" aria-haspopup="true">Video Gallery</a></li><li id="menu-item-4556" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4556"><a href="http://theme-fusion.com/avada/carousel/" aria-haspopup="true">Carousel</a></li><li id="menu-item-3781" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3781"><a href="http://theme-fusion.com/avada/thumbnail-nav/" aria-haspopup="true">Thumbnail Nav Small</a></li><li id="menu-item-4038" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4038"><a href="http://theme-fusion.com/avada/thumbnail-nav-large/" aria-haspopup="true">Thumbnail Nav Large</a></li></ul></li><li id="menu-item-3621" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3621 fusion-dropdown-submenu"><a href="http://theme-fusion.com/avada/home-version-6/#" aria-haspopup="true">Revolution Slider</a><ul class="sub-menu"><li id="menu-item-3766" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3766"><a href="http://theme-fusion.com/avada/slider-revolution/" aria-haspopup="true">Fixed Width</a></li><li id="menu-item-3759" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3759"><a href="http://theme-fusion.com/avada/full-width-3/" aria-haspopup="true">Full Width</a></li><li id="menu-item-5945" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5945"><a href="http://theme-fusion.com/avada/full-screen-revolution-slider/" aria-haspopup="true">Full Screen</a></li><li id="menu-item-3758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3758"><a href="http://theme-fusion.com/avada/video-gallery/" aria-haspopup="true">Video Gallery</a></li><li id="menu-item-4587" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4587"><a href="http://theme-fusion.com/avada/captions/" aria-haspopup="true">Captions</a></li><li id="menu-item-3780" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3780"><a href="http://theme-fusion.com/avada/thumbnail-nav-2/" aria-haspopup="true">Thumbnail Nav Small</a></li><li id="menu-item-4044" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4044"><a href="http://theme-fusion.com/avada/thumbnail-nav-large-2/" aria-haspopup="true">Thumbnail Nav Large</a></li></ul></li><li id="menu-item-9777" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-9777 fusion-dropdown-submenu"><a href="http://theme-fusion.com/avada/home-version-6/#" aria-haspopup="true">Fusion Slider</a><ul class="sub-menu"><li id="menu-item-9776" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9776"><a href="http://theme-fusion.com/avada/fusion-slider-full-width/" aria-haspopup="true">FS Full Width</a></li><li id="menu-item-9775" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9775"><a href="http://theme-fusion.com/avada/fusion-slider-full-screen/" aria-haspopup="true">FS Full Screen</a></li><li id="menu-item-9774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9774"><a href="http://theme-fusion.com/avada/fusion-slider-fixed-width/" aria-haspopup="true">FS Fixed Width</a></li></ul></li><li id="menu-item-10287" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10287 fusion-dropdown-submenu"><a href="http://theme-fusion.com/avada/elastic-slider/" aria-haspopup="true">Elastic Slider</a></li><li id="menu-item-3576" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3576 fusion-dropdown-submenu"><a href="http://theme-fusion.com/avada/home-version-6/#" aria-haspopup="true">Post Sliders</a><ul class="sub-menu"><li id="menu-item-3763" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3763"><a href="http://theme-fusion.com/avada/post-sliders/" aria-haspopup="true">Page/Post Sliders</a></li><li id="menu-item-3764" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3764"><a href="http://theme-fusion.com/avada/avada_portfolio/quisque-sit-amet-unte/?portfolioID=98" aria-haspopup="true">Portfolio Post</a></li><li id="menu-item-3765" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3765"><a href="http://theme-fusion.com/avada/praesent-et-urna-turpis-sadips/" aria-haspopup="true">Blog Post</a></li></ul></li></ul></li>
-                </ul> 
+                {{ theme:partial name="main_menu" }}
             </nav>
         </div>
     </div>

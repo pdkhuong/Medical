@@ -1,5 +1,4 @@
-
-
+{{ theme:partial name="breadcrumbs" }}
 {{ post }}
 
 <div class="post">
