@@ -213,7 +213,6 @@ class Blog extends Public_Controller
 		{
 			redirect('blog');
 		}
-
 		$this->_single_view($post);
 	}
 
@@ -454,7 +453,11 @@ class Blog extends Public_Controller
 					($post['comments_enabled'] !== 'no' and time() < strtotime('+'.$post['comments_enabled'], $post['created_on']))
 			));
 		}
-
+    $categories = $this->blog_m->get_group_category();
+    $topBlogs = $this->blog_m->get_all_by('', 0, 10);
+    
+    $nextBlog = $this->blog_m->getContinue($post['id'], 1, true);
+    $prevBlog = $this->blog_m->getContinue($post['id'], 1, false);
 		$this->template
 			->title($post['title'])
 			->set_metadata('og:type', 'article', 'og')
@@ -469,6 +472,10 @@ class Blog extends Public_Controller
 			->set_breadcrumb($post['title'])
 			->set_stream($this->stream->stream_slug, $this->stream->stream_namespace)
 			->set('post', array($post))
+      ->set('categories', $categories)
+      ->set('topBlogs', $topBlogs)
+      ->set('nextBlog', $nextBlog)
+      ->set('prevBlog', $prevBlog)
 			->build('view');
 	}
 }
