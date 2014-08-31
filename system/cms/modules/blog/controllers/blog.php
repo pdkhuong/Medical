@@ -49,22 +49,19 @@ class Blog extends Public_Controller
 	 */
 	public function index()
 	{
-		// Get our comment count whil we're at it.
-		$this->row_m->sql['select'][] = "(SELECT COUNT(id) FROM ".
-				$this->db->protect_identifiers('comments', true)." WHERE module='blog'
-				AND is_active='1' AND entry_key='blog:post' AND entry_plural='blog:posts'
-				AND entry_id=".$this->db->protect_identifiers('blog.id', true).") as `comment_count`";
+    $itemPerPage = Settings::get('records_per_page');
+    $base_where = "`status`='live'";
+    $total_rows = $this->blog_m->count_by("`status`='live'");
+    $pagination = frontendPaging('blog/page', $total_rows, $itemPerPage);
 
-		// Get the latest blog posts
-		$posts = $this->streams->entries->get_entries(array(
-			'stream'		=> 'blog',
-			'namespace'		=> 'blogs',
-			'limit'			=> Settings::get('records_per_page'),
-			'where'			=> "`status` = 'live'",
-			'paginate'		=> 'yes',
-			'pag_base'		=> site_url('blog/page'),
-			'pag_segment'   => 3
-		));
+    $blogs = $this->blog_m
+      ->limit($pagination['limit'], $pagination['offset'])
+      ->get_many_by($base_where);
+    $posts['entries'] = array();
+    $posts['entries'] = json_decode(json_encode($blogs),true);
+
+    $categories = $this->blog_m->get_group_category();
+    $topBlogs = $this->blog_m->get_all_by('', 0, 10);
 
 		// Process posts
 		foreach ($posts['entries'] as &$post)
@@ -74,11 +71,6 @@ class Blog extends Public_Controller
 
 		// Set meta description based on post titles
 		$meta = $this->_posts_metadata($posts['entries']);
-
-		$data = array(
-			'pagination' => $posts['pagination'],
-			'posts' => $posts['entries']
-		);
 
 		$this->template
 			->title($this->module_details['name'])
@@ -91,7 +83,9 @@ class Blog extends Public_Controller
 			->set_metadata('keywords', $meta['keywords'])
 			->set_stream($this->stream->stream_slug, $this->stream->stream_namespace)
 			->set('posts', $posts['entries'])
-			->set('pagination', $posts['pagination'])
+			->set('pagination', $pagination)
+      ->set('categories', $categories)
+      ->set('topBlogs', $topBlogs)
 			->build('posts');
 	}
 
