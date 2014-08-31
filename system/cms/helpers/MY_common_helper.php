@@ -48,11 +48,11 @@
   function getImageThumb($imageId, $width = null, $height = null) {
     return base_url('files/thumb/' . $imageId . '/' . $width . '/' . $height);
   }
-function frontendPaging($uri='', $totalRow=10, $perPage=10){
+function frontendPaging($uri='', $totalRow=10, $perPage=10, $segment=3){
 
   $ci = & get_instance();
   $ci->load->library('pagination');
-  $current_page = $ci->uri->segment(3);
+  $current_page = $ci->uri->segment($segment);
 
   $config['base_url'] = site_url($uri);
   $config['total_rows'] = $totalRow;
