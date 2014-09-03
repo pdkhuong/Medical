@@ -79,5 +79,39 @@
                 <span class="caret"></span>
             </a>
         </li>
+        <?php if($this->current_user):?>
+        <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
+            <a href="javascript:void(0)" aria-haspopup="true">My Account
+                <span class="caret"></span>
+            </a>
+            <ul class="sub-menu">
+                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
+                    <a href="/users/logout" aria-haspopup="true">Logout</a>
+                </li>
+
+                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
+                    <a href="/edit-profile" aria-haspopup="true">Edit profile</a>
+                </li>
+            </ul>
+        </li>
+        <?php else:?>
+        <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
+            <a href="javascript:void(0)" aria-haspopup="true">User
+                <span class="caret"></span>
+            </a>
+            <ul class="sub-menu">
+                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
+                    <a href="/users/login" aria-haspopup="true">Login</a>
+                </li>
+
+                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
+                    <a href="/register" aria-haspopup="true">Register</a>
+                </li>
+            </ul>
+        </li>
+        <?php endif;?>
+
+
+
 
     </ul> 

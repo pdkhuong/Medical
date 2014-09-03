@@ -7,7 +7,6 @@
 	} else {
 		$name = $user->first_name.' '.$user->last_name;
 	}
-
 ?>
 
 <h1><?php echo $name; ?></h1>
