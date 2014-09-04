@@ -200,5 +200,8 @@ define('FILE_BLOG_FOLDER_ID', 2);
 define('BLOG_CATEGORY_TOP', 1);
 define("STATIC_PATH", BASE_URL."addons/shared_addons/themes/medicalV2");
 define("BASE_UPLOAD_PATH", BASE_URL."uploads");
-define('FACEBOOK_APP_ID', '564316910360969');
-define('FACEBOOK_APP_SECRET', 'faf9a3dacc35b35745ee823b5454888a');
+
+define('FACEBOOK_APP_ID', '1393061170976671');
+define('FACEBOOK_APP_SECRET', '917b58e15a9a21dfc112815c8cf7b261');
+define("FACEBOOK_LOGIN_REDIRECT_URI", BASE_URL."facebook-login");
+define("FACEBOOK_LOGIN_PROVIDER", "facebook");

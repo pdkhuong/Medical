@@ -54,6 +54,7 @@ $route['register']                          = 'users/register';
 $route['user/(:any)']	                    = 'users/view/$1';
 $route['my-profile']	                    = 'users/index';
 $route['edit-profile']	                    = 'users/edit';
+$route['facebook-login']	                    = 'users/facebooklogin';
 
 $route['sitemap.xml']                       = 'sitemap/xml';
 

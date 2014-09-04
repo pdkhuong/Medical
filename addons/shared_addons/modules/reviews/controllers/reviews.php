@@ -9,7 +9,7 @@ class Reviews extends Public_Controller {
   }
 
   function index() {
-    $itemPerPage = Settings::get('records_per_page');
+    $itemPerPage = 24;//Settings::get('records_per_page');
     $base_where = "`status`='live'";
     $total_rows = $this->reviews_m->count_by($base_where);
     $pagination = frontendPaging('reviews/page', $total_rows, $itemPerPage, 3);
@@ -17,8 +17,7 @@ class Reviews extends Public_Controller {
     $reviews = $this->reviews_m
       ->limit($pagination['limit'], $pagination['offset'])
       ->get_many_by($base_where);
-
-
+    //echo "<pre>"; print_r($reviews); die();
     $this->template
       ->title($this->module_details['name'])
       ->set_breadcrumb("Reviews")
@@ -31,9 +30,6 @@ class Reviews extends Public_Controller {
       ->set('pagination', $pagination)
       ->set("reviews", $reviews)
       ->build('index');
-
-  }
-  function view($id){
 
   }
 }

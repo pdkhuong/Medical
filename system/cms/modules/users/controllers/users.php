@@ -20,6 +20,7 @@ class Users extends Public_Controller
 
 		// Load the required classes
 		$this->load->model('user_m');
+    $this->load->model('profile_m');
 		$this->load->helper('user');
 		$this->lang->load('user');
 		$this->load->library('form_validation');
@@ -137,7 +138,7 @@ class Users extends Public_Controller
 			$this->session->unset_userdata('redirect_to');
 
 			// trigger a post login event for third party devs
-			Events::trigger('post_user_login');
+			//Events::trigger('post_user_login');
 
 			if ($this->input->is_ajax_request())
 			{
@@ -187,7 +188,7 @@ class Users extends Public_Controller
 		Events::trigger('pre_user_logout');
 
 		$this->ion_auth->logout();
-
+    session_destroy();
 		if ($this->input->is_ajax_request())
 		{
 			exit(json_encode(array('status' => true, 'message' => lang('user:logged_out'))));
@@ -1055,6 +1056,63 @@ class Users extends Public_Controller
       'api_key' => isset($api_key) ? $api_key : null,
     ));
   }
-  
+  function facebooklogin(){
+    if ($this->current_user){
+      $this->session->set_flashdata('notice', lang('user:already_logged_in'));
+      redirect();
+    }
+    require_once(APPPATH.'libraries/Facebook/facebook.php');
+    $facebook = new Facebook(array(
+      'appId' => FACEBOOK_APP_ID,
+      'secret' => FACEBOOK_APP_SECRET,
+    ));
+    $user = $facebook->getUser();
+    if ($user) {
+      try {
+        $userProfile = $facebook->api('/me');
+        //echo "<pre>"; print_r($userProfile); die();
+        if (isset($userProfile['id']) && isset($userProfile['email'])) {
+          $dbUser = $this->profile_m->get_profile(array('oauth_uid'=>$userProfile['id'], 'oauth_provider'=>FACEBOOK_LOGIN_PROVIDER));
+          if ($dbUser) {//if user in yte system
+            $this->ion_auth->force_login($dbUser->user_id, true);
+            redirect();
+          } else {//user not in sytem
+            $userData = array();
+            $userData['email'] = $userProfile['email'];
+            $userData['group_id'] = 2;
+            $userData['active'] = 1;
+            $userData['created_on'] = time();
+            $userId = $this->user_m->insert($userData);
+            $profileData = array();
+            $profileData['user_id'] = $userId;
+            $profileData['lang'] = 'en';
+            $profileData['display_name'] = isset($userProfile['name']) ? $userProfile['name'] : 'Logged via Facebook';
+            $profileData['first_name'] = $userProfile['first_name'];
+            $profileData['last_name'] = $userProfile['last_name'];
+            $profileData['dob'] = isset($userProfile['birthday']) ? strtotime($userProfile['birthday']) : NULL;
+            $profileData['lang'] = 'en';
+            $profileData['oauth_uid'] = $userProfile['id'];
+            $profileData['oauth_provider'] = FACEBOOK_LOGIN_PROVIDER;
+            $this->profile_m->insert($profileData);
+            $this->ion_auth->force_login($userId, true);
+          }
+        } else {
+          die ("Cannot get your information");
+          //redirect();
+        }
+      } catch (FacebookApiException $e) {
+        $user = NULL;
+      }
+    }
+    if (empty($user)) {
+      //login url
+      $loginurl = $facebook->getLoginUrl(array(
+        'scope' => 'email, read_stream, publish_stream, user_birthday',
+        'redirect_uri' => FACEBOOK_LOGIN_REDIRECT_URI,
+      ));
+      header('Location: ' . $loginurl);
+    }
+    exit;
 
+  }
 }

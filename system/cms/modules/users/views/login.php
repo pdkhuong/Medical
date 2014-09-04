@@ -25,9 +25,9 @@
                       <?php echo lang('user:remember') ?>
                     </label>
                   </p>
-                  <p class="lost_password">
+                  <!--<p class="lost_password">
                     <?php echo anchor('users/reset_pass', lang('user:reset_password_link'));?>
-                  </p>
+                  </p>-->
                 <?php echo form_close() ?>
               </div>
 

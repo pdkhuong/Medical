@@ -32,9 +32,8 @@
                             </div>
                         </div>
                     </div>
-                    <div id="_loader" class="mobile_video_image" style="margin-top: 83px; height: 620px; background-image: url('<?php echo $video['cover']?>');"></div>
-                    <div class="background self-hosted-video-bg" style="width: 100%; height: 620px;" data-imgwidth="500">
-                        <video id="_video" width="1800" height="700" autoplay="" loop="" preload="auto" style="width: 100%; left: 0px;">
+                    <div class="background self-hosted-video-bg" style="margin-top: 83px; width: 100%; height: 620px;" data-imgwidth="">
+                        <video poster="<?php echo $video['cover']?>" id="_video" width="1800" height="700" autoplay="" loop="loop" preload="auto" style="width: 100%; left: 0px">
                             <source src="<?php echo $video['mp4']?>" type="video/mp4">
                             <source src="<?php echo $video['webm']?>" type="video/webm">
                         </video>
@@ -50,6 +49,7 @@
         var video = document.querySelector('#_video');
         function checkLoad() {
             if (video.readyState === 4) {
+                video.style.display="block";
                 document.getElementById('_loader').className="mobile_video_image";
             } else {
                 document.getElementById('_loader').className="";
