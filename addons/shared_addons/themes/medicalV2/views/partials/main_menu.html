@@ -41,37 +41,6 @@
             <a href="/dental-reviews" aria-haspopup="true">Reviews
                 <span class="caret"></span>
             </a>
-            <ul class="sub-menu">
-                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                    <a href="/dental-reviews" aria-haspopup="true">Dental</a>
-                </li>
-
-                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                    <a href="/cosmetic-laser-reviews" aria-haspopup="true">Cosmetic laser</a>
-                </li>
-            </ul>
-        </li>
-
-        <!--dynamic blog-->
-        <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-            <a href="/accommodation-travel-guide" aria-haspopup="true">Travel guide
-                <span class="caret"></span>
-            </a>
-            <ul class="sub-menu">
-                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                    <a href="/accommodation-travel-guide" aria-haspopup="true">Accommodation</a>
-                </li>
-
-                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                    <a href="/pickup-service-travel-guide" aria-haspopup="true">Pickup service</a>
-                </li>
-                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                    <a href="/tourism-service-travel-guide" aria-haspopup="true">Tourism service</a>
-                </li>
-                <li id="menu-item-3609" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3609 fusion-dropdown-submenu">
-                    <a href="/visa-requirement-travel-guide" aria-haspopup="true">Visa requirement</a>
-                </li>
-            </ul>
         </li>
 
         <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
@@ -79,9 +48,13 @@
                 <span class="caret"></span>
             </a>
         </li>
+
+
+
+
         <?php if($this->current_user):?>
         <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-            <a href="javascript:void(0)" aria-haspopup="true">My Account
+            <a class="icon-user" href="javascript:void(0)" aria-haspopup="true"> <?php echo strtoupper($this->current_user->last_name)?>
                 <span class="caret"></span>
             </a>
             <ul class="sub-menu">
@@ -96,7 +69,7 @@
         </li>
         <?php else:?>
         <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-            <a href="javascript:void(0)" aria-haspopup="true">User
+            <a class="icon-user" href="javascript:void(0)" aria-haspopup="true"> Sign in
                 <span class="caret"></span>
             </a>
             <ul class="sub-menu">
@@ -111,7 +84,5 @@
         </li>
         <?php endif;?>
 
+    </ul>
 
-
-
-    </ul> 

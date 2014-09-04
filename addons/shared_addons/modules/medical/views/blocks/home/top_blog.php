@@ -24,10 +24,11 @@
             <h2>
               <a href="<?php echo getBlogLink($d->created_on, $d->slug)?>"><?php echo $d->title?></a>
             </h2>
+            <?php if($d->category_title):?>
             <h4>
-              <a href="http://theme-fusion.com/avada/portfolio_category/photography/" rel="tag">Photography</a>, 
-              <a href="http://theme-fusion.com/avada/portfolio_category/videography/" rel="tag">Videos</a>
+              <a href="<?php echo base_url('blog/category').'/'.$d->category_slug ?>"><?php echo $d->category_title?></a>
             </h4>
+            <?php endif;?>
             <div class="excerpt-container strip-html">
               <?php echo $d->intro?>
             </div>

@@ -9,10 +9,14 @@
                
                 <div class="post-content-container">
                   <?php echo $block_blog?>
-                  
                 </div>
               </div>
+             <?php echo $block_counter ?>
+             <?php echo $block_reviews ?>
+             <?php echo $block_partner?>
             </div> 
         </div>
     </div>
+
+
 </div>

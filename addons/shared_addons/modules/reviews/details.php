@@ -18,6 +18,20 @@
         'backend' => true,
         'skip_xss' => true,
         'menu' => 'content',
+
+        'sections' => array(
+          'reviews' => array(
+            'name' => 'Reviews',
+            'uri' => 'admin/reviews',
+            'shortcuts' => array(
+              array(
+                'name' => 'global:add',
+                'uri' => 'admin/reviews/create',
+                'class' => 'add',
+              ),
+            ),
+          ),
+        ),
       );
       return $info;
     }

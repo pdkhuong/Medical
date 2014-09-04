@@ -6,13 +6,22 @@
     public function __construct() {
       
       $this->load->model('fe_blog_m');
+      $this->load->model('reviews/reviews_m');
       parent::__construct();
     }
 
     function index() {
       $data = array();
-      $blogs = $this->fe_blog_m->get_all_by('', 0, 8);
+      $blogs = $this->fe_blog_m->get_all_by("`status`='live'", 0, 8);
+
       $data['block_blog'] = $this->load->view("blocks/home/top_blog", array('data'=>$blogs), true);
+
+      $reviews = $this->reviews_m->get_all_by("`status`='live'", 0, 3);
+
+      $data['block_reviews'] = $this->load->view("blocks/home/reviews", array('data'=>$reviews), true);
+      $data['block_counter'] = $this->load->view("blocks/home/counter", array('data'=>array()), true);
+      $data['block_partner'] = $this->load->view("blocks/home/partner", array('data'=>array()), true);
+
       /*
       $data['block_why_choose'] = $this->load->view("blocks/home/why_choose", array(), true);
       $data['block_traveller_say'] = $this->load->view("blocks/home/traveller_say", array(), true);
