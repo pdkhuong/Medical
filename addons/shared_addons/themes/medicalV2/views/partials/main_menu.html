@@ -54,7 +54,7 @@
 
         <?php if($this->current_user):?>
         <li id="menu-item-1300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1300 fusion-dropdown-menu">
-            <a class="icon-user" href="javascript:void(0)" aria-haspopup="true"> <?php echo strtoupper($this->current_user->last_name)?>
+            <a class="icon-user" href="javascript:void(0)" aria-haspopup="true"> <?php echo ucfirst($this->current_user->last_name)?>
                 <span class="caret"></span>
             </a>
             <ul class="sub-menu">
