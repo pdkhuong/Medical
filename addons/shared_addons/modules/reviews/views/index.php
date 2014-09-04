@@ -1,5 +1,5 @@
 {{ theme:partial name="breadcrumbs" }}
-<?php if($posts):?>
+<?php if($reviews):?>
 
 <div id="main" class="clearfix">
   <div class="avada-row">

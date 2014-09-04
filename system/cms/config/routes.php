@@ -58,5 +58,8 @@ $route['edit-profile']	                    = 'users/edit';
 $route['sitemap.xml']                       = 'sitemap/xml';
 
 $route['home/delete-cache']	                    = 'medical/home/test';
+$route['reviews']	                    = 'reviews/reviews/index';
+$route['(reviews)/page(/:num)?']           = 'reviews/index$2';
+$route['(reviews)/(:num)']   = 'reviews/view/$2';
 
 /* End of file routes.php */
