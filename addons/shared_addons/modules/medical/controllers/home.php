@@ -12,13 +12,14 @@
 
     function index() {
       $data = array();
-      $blogs = $this->fe_blog_m->get_all_by("`status`='live'", 0, 8);
+      //$blogs = $this->fe_blog_m->get_all_by("`status`='live'", 0, 8);
 
-      $data['block_blog'] = $this->load->view("blocks/home/top_blog", array('data'=>$blogs), true);
-
+      //$data['block_blog'] = $this->load->view("blocks/home/top_blog", array('data'=>$blogs), true);
+      $data['block_type'] = $this->load->view("blocks/home/medical_type", array('data'=>array()), true);
       $reviews = $this->reviews_m->get_all_by("`status`='live'", 0, 3);
 
       $data['block_reviews'] = $this->load->view("blocks/home/reviews", array('data'=>$reviews), true);
+      $data['block_boxes'] = $this->load->view("blocks/home/boxes", array('data'=>array()), true);
       $data['block_counter'] = $this->load->view("blocks/home/counter", array('data'=>array()), true);
       $data['block_partner'] = $this->load->view("blocks/home/partner", array('data'=>array()), true);
 

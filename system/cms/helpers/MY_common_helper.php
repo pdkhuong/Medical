@@ -25,6 +25,14 @@
     }
 
   }
+  if (!function_exists('image_path')) {
+
+    function image_path($file = '') {
+      $filePath = STATIC_PATH.'/images/'.$file;
+      return $filePath;
+    }
+
+  }
   if (!function_exists('js')) {
 
     function js($file = '') {
