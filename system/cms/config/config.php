@@ -408,3 +408,132 @@ $config['medical']['banner_video'] = array(
     'cover' => BASE_URL."uploads/cover_video2.jpg",
   )*/
 );
+
+$baseLink = '/blog/2014/10/';
+$config['medical']['home_medical_type'] = array(
+
+  array('name'=>'Vietnam',
+    'items'=> array(
+      array('name'=>'Cyclo tour',
+        'link'=>$baseLink.'cyclo-tour',
+        'image'=>'home/type_vietnam/cyclo tour.jpg'),
+      array('name'=>'City vespa',
+        'link'=>$baseLink.'city-vespa',
+        'image'=>'home/type_vietnam/city vespa.jpg'),
+      array('name'=>'Mekong delta vespa',
+        'link'=>$baseLink.'mekong-delta-vespa',
+        'image'=>'home/type_vietnam/mekong delta vespa.jpg'),
+      array('name'=>'Bassac kayaking',
+        'link'=>$baseLink.'bassac-kayaking',
+        'image'=>'home/type_vietnam/bassac kayaking.jpg'),
+      array('name'=>'Cu Chi tunnels',
+        'link'=>$baseLink.'cu-chi-tunnels',
+        'image'=>'home/type_vietnam/cu chi tunnels.jpg'),
+      array('name'=>'Floating market',
+        'link'=>$baseLink.'floating-market',
+        'image'=>'home/type_vietnam/floating market.jpg'),
+      array('name'=>'Mekong delta cycle',
+        'link'=>$baseLink.'mekong-delta-cycle',
+        'image'=>'home/type_vietnam/mekong delta cycle.jpg'),
+      array('name'=>'Mekong river trip',
+        'link'=>$baseLink.'mekong-river-trip',
+        'image'=>'home/type_vietnam/mekong river trip.jpg'),
+      array('name'=>'XO tour',
+        'link'=>$baseLink.'xo-tour',
+        'image'=>'home/type_vietnam/xo tour.jpg'),
+    )
+  ),
+  array('name'=>'Dental',
+    'items'=> array(
+      array('name'=>'Dental implants',
+        'link'=>'/dental-implants',
+        'image'=>'home/type_dental/dental08.jpg'),
+      array('name'=>'Dental crown',
+        'link'=>'/dental-crown',
+        'image'=>'home/type_dental/dental07.jpg'),
+      array('name'=>'Dental veneer',
+        'link'=>'/dental-veneer',
+        'image'=>'home/type_dental/dental06.jpg'),
+      array('name'=>'Cosmetic dentistry',
+        'link'=>'/cosmetic-dentistry',
+        'image'=>'home/type_dental/dental05.jpg'),
+      array('name'=>'Teeth whitening',
+        'link'=>'/teeth-whitening',
+        'image'=>'home/type_dental/dental04.jpg'),
+      array('name'=>'Gum treatment',
+        'link'=>'/gum-treatment',
+        'image'=>'home/type_dental/dental03.jpg'),
+      array('name'=>'Root canal treatment',
+        'link'=>'/root-canal-treatment',
+        'image'=>'home/type_dental/dental02.jpg'),
+      array('name'=>'Jaw surgery',
+        'link'=>'/jaw-surgery',
+        'image'=>'home/type_dental/dental01.jpg')
+    )
+  ),
+  array('name'=>'Cosmetic laser',
+    'items'=> array(
+      array('name'=>'Botox',
+        'link'=>'/botox',
+        'image'=>'home/type_cosmetic/botox.jpg'),
+      array('name'=>'Fraxel',
+        'link'=>'/fraxel',
+        'image'=>'home/type_cosmetic/fraxel.jpg'),
+      array('name'=>'Relaxing care',
+        'link'=>'/relaxing-care',
+        'image'=>'home/type_cosmetic/relaxing care.jpg'),
+      array('name'=>'Skincare',
+        'link'=>'/skincare',
+        'image'=>'home/type_cosmetic/skincare01.jpg'),
+      array('name'=>'Skin rejuvenation',
+        'link'=>'/skin-rejuvenation',
+        'image'=>'home/type_cosmetic/skincare02.jpg'),
+      array('name'=>'Pigmentation treatment',
+        'link'=>'/pigmentation-treatment',
+        'image'=>'home/type_cosmetic/skincare07.jpg'),
+      array('name'=>'Thermage',
+        'link'=>'/thermage',
+        'image'=>'home/type_cosmetic/thermage.jpg'),
+      array('name'=>'Ultherapy',
+        'link'=>'/ultherapy',
+        'image'=>'home/type_cosmetic/ultherapy.jpg')
+    )
+  )
+
+  
+);
+$config['medical']['home_boxes'] = array(
+  array('name'=>'boxes 1',
+    'items'=>array(
+      array('name'=>'Offer only the best',
+        'link'=>'/how-it-works',
+        'class'=>'fa-thumbs-up',
+        'description'=>'Offer only the best'),
+      array('name'=>'Online Quotation',
+        'link'=>'/how-it-works',
+        'class'=>'fa-envelope',
+        'description'=>'Online Quotation'),
+      array('name'=>'Free pickup',
+        'link'=>'/how-it-works',
+        'class'=>'fa-plane',
+        'description'=>'Free pickup')
+    )
+  ),
+  array('name'=>'boxes 2',
+    'items'=>array(
+      array('name'=>'Personal Assistance',
+        'link'=>'/how-it-works',
+        'class'=>'fa-plus',
+        'description'=>'Personal Assistance'),
+      array('name'=>'Medical history',
+        'link'=>'/how-it-works',
+        'class'=>'fa-cloud-upload',
+        'description'=>'Medical history'),
+      array('name'=>'Aftercare Services',
+        'link'=>'/how-it-works',
+        'class'=>'fa-gift',
+        'description'=>'Aftercare Services')
+    )
+  )
+
+);

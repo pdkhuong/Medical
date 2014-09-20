@@ -1,13 +1,10 @@
 <div class="avada-row">
-  <h1 style="text-align: center; font-size: 30px !important;">Over 70,000 Users, Let’s See What Some Have To Say?</h1>
-  <p style="text-align: center; margin-top: -10px; font-size: 17px;">We love our users and are fully dedicated to keeping their trust by offering amazing updates and
-        <span class="fusion-tooltip tooltip-shortcode" data-animation="" data-delay="" data-placement="top" data-title="94% of Users Recommend Avada" data-toggle="tooltip" data-trigger="hover" data-original-title="" title="">
-            <strong>outstanding</strong>
-        </span> after sale support!
-  </p>
-  <div class="fusion-sep-clear"></div>
-  <div class="fusion-separator sep-none" style="border-color:#e0dede;margin-top:20px;"></div>
-
+  <div class="fusion-title title">
+    <h2 class="title-heading-left">What Some Have To Say?</h2>
+    <div class="title-sep-container">
+      <div class="title-sep sep-double"></div>
+    </div>
+  </div>
   <?php if($data):?>
     <?php foreach($data as $key => $d):?>
   <div class="fusion-one-third one_third fusion-column <?php if($key==count($data)-1) echo 'last' ?>">
