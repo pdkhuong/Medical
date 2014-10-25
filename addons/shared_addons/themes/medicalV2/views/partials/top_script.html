@@ -1,70 +1,23 @@
-<!--[if lte IE 8]>
-<script type="text/javascript" src="http://localhost/wordpress/wp-content/themes/Avada_v3.5.3/js/html5shiv.js"></script>
-<![endif]-->
-
-<!-- Javascript Page Loader -->
-<?php echo js("jquery") ?>
-<?php echo js("jquery-migrate.min") ?>
-<!--[if lte IE 8]>
-<script type="text/javascript">
-jQuery(document).ready(function() {
-var imgs, i, w;
-var imgs = document.getElementsByTagName( 'img' );
-for( i = 0; i < imgs.length; i++ ) {
-    w = imgs[i].getAttribute( 'width' );
-    imgs[i].removeAttribute( 'width' );
-    imgs[i].removeAttribute( 'height' );
-}
-});
-</script>
-<?php echo js("excanvas") ?>
-
-<![endif]-->
-
-<!--[if lte IE 9]>
-<script type="text/javascript">
-jQuery(document).ready(function() {
-
-// Combine inline styles for body tag
-jQuery('body').each( function() {	
-        var combined_styles = '<style>';
-
-        jQuery( this ).find( 'style' ).each( function() {
-                combined_styles += jQuery(this).html();
-                jQuery(this).remove();
-        });
-
-        combined_styles += '</style>';
-
-        jQuery( this ).prepend( combined_styles );
-});
-});
-</script>
-<![endif]-->
-
-<script type="text/javascript">
-    /*@cc_on
-     @if (@_jscript_version == 10)
-     document.write('<style type="text/css">.search input,#searchform input {padding-left:10px;} .avada-select-parent .avada-select-arrow,.select-arrow{height:33px;background-color:#ffffff;}.search input{padding-left:5px;}header .tagline{margin-top:3px;}.star-rating span:before {letter-spacing: 0;}.avada-select-parent .avada-select-arrow,.gravity-select-parent .select-arrow,.wpcf7-select-parent .select-arrow,.select-arrow{background: #fff;}.star-rating{width: 5.2em;}.star-rating span:before {letter-spacing: 0.1em;}</style>');
-     @end
-     @*/
-
-    var doc = document.documentElement;
-    doc.setAttribute('data-useragent', navigator.userAgent);
-</script>
-
-<script type="text/javascript">
-    WebFontConfig = {
-        google: {families: ["PT+Sans:400,400italic,700,700italic:latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese", "Antic+Slab:400,400italic,700,700italic:latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese"]}, custom: {families: ['FontAwesome'],
-            urls: ['<?php echo file_path("fonts/fontawesome/font-awesome.css") ?>']
-        }};
-    (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-    })();
+<?php echo js("jquery.min") ?>
+<?php echo js("bootstrap") ?>
+<?php echo js("scripts") ?>
+<?php echo js("jquery.prettyPhoto") ?>
+<?php echo js("video-lightbox") ?>
+<?php echo js("jquery.ui.core.min") ?>
+<?php echo js("jquery.ui.widget.min") ?>
+<?php echo js("jquery.ui.tabs.min") ?>
+<?php echo js("jquery.ui.accordion.min") ?>
+<?php echo js("jquery.ui.mouse.min") ?>
+<?php echo js("jquery.ui.resizable.min") ?>
+<?php echo js("jquery.ui.draggable.min") ?>
+<?php echo js("jquery.ui.button.min") ?>
+<?php echo js("jquery.ui.position.min") ?>
+<?php echo js("jquery.ui.dialog.min") ?>
+<?php echo js("jquery.ui.sortable.min") ?>
+<?php //echo js("wp-ui") ?>
+<?php echo js("hash-videos-lightbox") ?>
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    //var wpUIOpts = {"wpUrl":"http:\/\/www.specialistdentalgroup.com","pluginUrl":"http:\/\/www.specialistdentalgroup.com\/wp-content\/plugins\/wp-ui\/","enableTabs":"on","enableAccordion":"on","enableSpoilers":"on","enableDialogs":"on","tabsEffect":"none","effectSpeed":"400","accordEffect":"none","alwaysRotate":"stop","tabsEvent":"click","collapsibleTabs":"off","accordEvent":"click","topNav":"off","accordAutoHeight":"on","accordCollapsible":"off","accordEasing":"false","mouseWheelTabs":"false","bottomNav":"off","tabPrevText":"Prev","tabNextText":"Next","spoilerShowText":"Click to show","spoilerHideText":"Click to hide","cookies":"on","hashChange":"on","docWriteFix":"on","linking_history":"on","misc_options":"hashing_timeout=1000\r\ntinymce_icon_row=3"};
+    /* ]]> */
 </script>

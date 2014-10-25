@@ -5,7 +5,20 @@
   class Fe_blog_m extends MY_Model {
 
     protected $_table = 'blog';
-
+    static protected $_instance = NULL;
+    function __construct() {
+      parent::__construct();
+    }
+    /**
+     *
+     * @return Content_model
+     */
+    static public function getInstance() {
+      if (self::$_instance === NULL) {
+        self::$_instance = new self();
+      }
+      return self::$_instance;
+    }
     public function get_all_by($where = '', $offset = 0, $limit = 15) {
 
       $this->db

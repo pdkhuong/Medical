@@ -1,28 +1,26 @@
-<?php if ($this->session->flashdata('error')): ?>
-<ul class="woocommerce-error">
-  <li>
-    <?php 
-    echo $this->session->flashdata('error');
-    $this->session->unset_userdata('flasherror');
-    ?>
-  </li>
-</ul>
-<?php endif; ?>
-
-<?php if (validation_errors()): ?>
-<ul class="woocommerce-error">
-  <li>
-    <?php echo validation_errors(); ?>
-  </li>
-</ul>
-<?php endif; ?>
-<?php 
-if ($this->session->flashdata('success')):
-?>
-<div class="alert success animated fadeIn">
-    <?php 
-    echo $this->session->flashdata('success'); 
-    $this->session->unset_userdata('flashsuccess');
-    ?>
+<div class="container-fluid sponsors" >
+    <h2 style="border-bottom:none;">Our
+        <span>Awards & Achievements</span>
+    </h2>
+    <div class="row-fluid ">
+        <div class="span3">
+            <a href="/2012/10/16/best-healthcare-experienceaward/">
+                <img src="http://www.specialistdentalgroup.com/wp-content/themes/sdg/assests/images/sponsor-logos-1.jpg" alt="" />
+            </a>
+            <p>Best Healthcare Experience
+                <br />
+                <em>Singapore Experience Awards 2012</em>
+            </p>
+        </div>
+        <div class="span3">
+            <a href="/2011/11/10/singapore-prestige-brand-award/">
+                <img src="http://www.specialistdentalgroup.com/wp-content/themes/sdg/assests/images/sponsor-logos-2.jpg" alt="" />
+            </a>
+            <p>Winner, "Promising Brands"
+                <br />
+                <em>Singapore Prestige Brand Award 2011</em>
+            </p>
+        </div>
+        <div class="span3"></div>
+    </div>
 </div>
-<?php endif; ?>

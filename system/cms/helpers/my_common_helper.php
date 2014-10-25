@@ -54,7 +54,13 @@
   }
 
   function getImageThumb($imageId, $width = null, $height = null) {
-    return base_url('files/thumb/' . $imageId . '/' . $width . '/' . $height);
+    $ret = "";
+    if($imageId){
+      $ret = base_url('files/thumb/' . $imageId . '/' . $width . '/' . $height);
+    }else{
+      $ret = file_path("images/no-image.png");
+    }
+    return $ret;
   }
 function frontendPaging($uri='', $totalRow=10, $perPage=10, $segment=3){
 

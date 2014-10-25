@@ -62,7 +62,6 @@ class Blog extends Public_Controller
 
     $categories = $this->blog_m->get_group_category();
     $topBlogs = $this->blog_m->get_all_by('', 0, 10);
-
 		// Process posts
 		foreach ($posts['entries'] as &$post)
 		{

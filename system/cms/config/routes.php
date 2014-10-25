@@ -58,7 +58,8 @@ $route['facebook-login']	                    = 'users/facebooklogin';
 
 $route['sitemap.xml']                       = 'sitemap/xml';
 
-$route['home/delete-cache']	                    = 'medical/home/test';
+$route['home/delete-cache']	                    = 'medical/home/deleteCache';
+$route['home/test']	                    = 'medical/home/test';
 $route['reviews']	                    = 'reviews/reviews/index';
 $route['(reviews)/page(/:num)?']           = 'reviews/index$2';
 $route['(reviews)/(:num)']   = 'reviews/view/$2';

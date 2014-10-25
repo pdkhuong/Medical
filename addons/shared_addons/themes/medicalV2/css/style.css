@@ -1,0 +1,172 @@
+/*
+Theme Name: SDG Theme
+Author: Envyus
+Version: 1
+Description: The SDG theme is a fully responsive theme that looks great on any device.
+*/
+
+.content .span8 a, .single-services-page a{ color: #f27f2e ;}
+
+#language_switcher .qtrans_flag {
+height: 12px;
+width: 18px;
+display: inline-block;
+margin-right: 6px;
+}
+.dropdown-menu .qtrans_flag_en{ background-position:6px 6px !important; padding-left:30px; }
+a.doc-thumbnail{ width: 60px;}
+
+.inner-page .inner-content .main .breadcrumb .current_item {
+color: #6E0B78;
+}
+ul li,  ol li {
+font-family: Arial, Helvetica, sans-serif;
+line-height: 21px;
+color: #636363;
+}
+.wpcf7-not-valid
+{
+	border: 1px solid red !important;
+	box-shadow: 0px 0px 3px red !important;
+} 
+
+span.wpcf7-not-valid-tip
+{
+	display: none !important;
+}
+.content .border.no_bottom_border{ border-bottom: none; }
+
+.inner-page .banner .doctor
+{
+display: block !important;
+}
+.header .navbar-outer .navbar-inner .nav-pills li > ul > li.sub-sub a{text-indent: 25px;}
+a.doc_service_thumb{ max-width: 60%; margin: 0 auto;}
+
+.single-services-page  .row-fluid .span4:last-child, .homepage-panels .row-fluid .span4:last-child{ padding-right: 20px;}
+p.copyright a:hover{ color: #fff;}
+.banner .left-col .txt {
+font-size: 17px;
+color: #ffffff;
+line-height: 46px;
+display: block;
+font-family: 'hlight';
+text-shadow: 0px 0px 8px #6E0B78;
+}
+.banner .left-col .txt:hover{text-decoration: none;}
+
+div.pp_default .pp_content, div.light_rounded .pp_content {
+max-height: 600px;
+overflow-y: auto;
+overflow-x: hidden;
+}
+a.pp_close {
+position: absolute;
+right: 20px;
+top: 0;
+display: block;
+line-height: 22px;
+text-indent: -10000px;
+}
+
+.pp_fade , .pp_content , .pp_inline
+{
+	height: auto !important;
+    max-height: 500px !important;
+margin-right: 6px;
+}
+
+div.pp_default .pp_details, div.light_rounded .pp_details, div.dark_rounded .pp_details, div.dark_square .pp_details, div.light_square .pp_details, div.facebook .pp_details
+{
+	 position: absolute !important;
+    right: 31px;
+    bottom: 30px;
+}
+
+.pp_pic_holder ul li, .pp_pic_holder ol li 
+{
+font-family: Arial, Helvetica, sans-serif;
+line-height: 21px;
+color: #636363;
+font-size: 14px;
+}
+
+.pp_inline p a{color: #892C8C !important;} 
+div.about-treatment a:hover{color: #892C8C;} 
+.content .border.last_col{ border-top: 1px solid #B8B8B8;}
+.main-content-div img.blog-img{ margin: 0px 10px 10px 0px;}
+.banner.service_detail .outer-spotlight .left-col .spotlight a, .banner .outer-spotlight .left-col .spotlight a{ font-size: 17px !important;}
+.inner-page .side-bar .service ul li {
+line-height: 25px;
+}
+
+body.single-post .content .span8 a{ text-decoration: underline;}
+.pagination li.active a{ font-weight: bold; color: #ffffff !important; background: #892C8C;}
+
+.footer .container-fluid h3 a {
+color: #E56000 !important;
+}
+
+
+.container-fluid.sponsors {
+max-width: 940px !important;
+margin: 0 auto;
+padding-bottom: 20px;
+padding-right: 0px;
+padding-left: 0px;
+}
+
+.container-fluid.sponsors .awrd{ margin-left: -100px;  margin-right: -100px;  width: auto;}
+
+@media (max-width: 980px) {
+.container-fluid.sponsors .awrd{ margin: 0px;}
+.container-fluid.sponsors .awrd .hidden-award-div{ display: none;}
+}
+
+.right-edge{ position:static !important; }
+.right-edge ul.sub-menu { left: auto !important; right: 0; top: 36px !important;}
+@media (max-width: 767px) {
+.header .top-bar form { display: block !important;}
+.header .top-bar .socail-link { display: block !important;}
+.btn-group { margin-top: 8px !important; margin-right: 10px !important; }
+.header .top-bar .pull-right { padding-right: 10px !important;}
+.header .top-bar .dropdown-toggle { position: static !important; }
+}
+@media (max-width: 682px) {
+.header .top-bar .socail-link { float: none !important;}
+}
+@media (max-width: 525px) {
+.top-bar.row-fluid div.pull-right { float: none !important; width: 290px !important; margin: 0 auto !important; padding-right: 0px !important;}
+.header .brand { float: none !important; margin: 24px 0 0 !important; }
+.header .brand img{ display: block; margin: 0 auto; }
+.header .top-bar .contact-number{ width: 290px !important; margin: 0 auto !important; }
+}
+@media (max-width: 480px)
+{
+.inner-page .small-banner, .inner-page .banner {height: auto !important;}
+}
+.appointment
+{
+	height: auto !important;
+	display: block;
+  padding: 5px 11px !important;
+  line-height: 23px !important;
+}
+
+
+.single-services-page .row-fluid .span4.videos, .single-services-page .row-fluid .span4.视频{ display: none;}
+
+.inner-page .side-bar .appointment{ position: relative;}
+.inner-page .side-bar .appointment img {
+margin: 0px;
+float: none;
+position: absolute;
+right: 10px;
+display: block;
+top: 6px;
+margin: 0px;
+}
+.inner-page .side-bar .appointment strong{ float: none;
+margin-right: 30px;
+display: block;
+font-weight: normal}

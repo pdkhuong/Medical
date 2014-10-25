@@ -1,24 +1,22 @@
-<div class="page-title-container">
-    <div class="page-title">
-        <div class="page-title-wrapper">
-            <div class="page-title-captions">
-                <h1 class="entry-title">{{ template:title }}</h1>
-            </div>
-            {{ if template:has_breadcrumbs }}
-               {{ if theme:options:show_breadcrumbs == 'yes' }}
-                   <ul class="breadcrumbs">
-                        <li><a href="/">Home</a></li>{{ template:breadcrumbs }}
-                        <li>
-                        {{ if uri }}
-                            {{ url:anchor segments=uri title=name }}
-                        {{ else }}
-                            {{ name }}
-			{{ endif }}
-                        </li>
-                        {{ /template:breadcrumbs }}
-                    </ul>
-                   {{ endif }}
-           {{ endif }}
-        </div>
-    </div>
-</div>
+{{ if template:has_breadcrumbs }}
+   {{ if theme:options:show_breadcrumbs == 'yes' }}
+       <ul class="breadcrumb">
+            <li class="home"><a class="site-home" href="/">Home</a><span class="divider"> / </span></li>
+            {{ template:breadcrumbs }}
+
+                {{ if uri }}
+                 <li>
+                    {{ url:anchor segments=uri title=name }}
+                    <span class="divider"> / </span>
+                 </li>
+                {{ else }}
+                <li class="current_item">
+                    {{ name }}
+                </li>
+
+                {{ endif }}
+
+            {{ /template:breadcrumbs }}
+        </ul>
+       {{ endif }}
+{{ endif }}

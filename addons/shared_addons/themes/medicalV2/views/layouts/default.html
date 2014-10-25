@@ -1,20 +1,75 @@
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>{{ template:title }}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        {{ theme:partial name="css" }}
-        {{ theme:partial name="top_script" }}
-    </head>
-    <body class="home blog logged-in admin-bar no-customize-support no-tablet-sticky-header no-mobile-sticky-header no-mobile-totop" data-spy="scroll">
-        <div id="wrapper" class="">
-            {{ theme:partial name="header" }}
-            {{ template:body }} 
-            {{ theme:partial name="footer" }}
-        </div><!-- wrapper -->
-    {{ theme:partial name="bottom_script" }}
-    </body>
+<html lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>{{ template:title }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, max-scale=1.0"/>
+
+    <link rel='shortcut icon' href="" type='image/x-icon'/>
+    {{ theme:partial name="css" }}
+    {{ theme:partial name="top_script" }}
+    <meta http-equiv="Content-Language" content="en-US" />
+
+    <!-- All in One SEO Pack 2.0.2 by Michael Torbert of Semper Fi Web Design[134,165] -->
+    <meta name="description" content="{{ template:title }}" />
+    <link rel="canonical" href="" />
+    <!-- /all in one seo pack -->
+
+</head>
+<?php
+$bodyClass = "home page page-id-13 page-template page-template-homepage_template-php";
+if($this->router->class=='blog'){
+    if($this->router->method=='index' || $this->router->method=='category'){
+        $bodyClass = "blog inner-page";
+    }
+    if($this->router->method=='view'){
+        $bodyClass = "single single-post postid-8250 single-format-standard inner-page";
+    }
+}
+?>
+<body class="<?php echo $bodyClass?>">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script type="text/javascript">
+    window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+</script>
+
+<ul class="nav-sticky">
+    <li>
+        <a href="http://www.specialistdentalgroup.com/make-an-appointment/" class="appointment">make an
+            <span>appointment</span>
+        </a>
+    </li>
+    <li>
+        <a href="http://www.specialistdentalgroup.com/contact-us/" class="enquiry">make an
+            <span>enquiry</span>
+
+        </a>
+    </li>
+</ul>
+<div class="canvas">
+
+{{ theme:partial name="header" }}
+
+
+{{ template:body }}
+
+{{ theme:partial name="sponso" }}
+{{ theme:partial name="footer" }}
+
+</div>
+
+{{ theme:partial name="bottom_script" }}
+
+
+</body>
 </html>

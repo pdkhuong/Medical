@@ -34,6 +34,13 @@
     
     }
     public function test(){
+      $importClassPath = SHARED_ADDONPATH."modules/medical/components/ImportBlog.php";
+      $this->load->file($importClassPath);
+      $importClass = new ImportBlog();
+      echo $importClass->import();
+      die();
+    }
+    public function deleteCache(){
       $this->pyrocache->delete_all('page_m');
       $this->pyrocache->delete_all('page_type_m');
       $this->pyrocache->delete_all('navigation_m');
