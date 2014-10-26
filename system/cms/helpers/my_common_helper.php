@@ -115,4 +115,23 @@ function frontendPaging($uri='', $totalRow=10, $perPage=10, $segment=3){
     'links' => $ci->pagination->create_links()
   );
 }
+function image_get_info($file) {
+  if (!is_file($file)) {
+    return FALSE;
+  }
+  $details = FALSE;
+  $data = @getimagesize($file);
+  $file_size = @filesize($file);
+
+  if (isset($data) && is_array($data)) {
+    $extensions = array('1' => 'gif', '2' => 'jpg', '3' => 'png');
+    $extension = array_key_exists($data[2], $extensions) ? $extensions[$data[2]] : '';
+    $details = array('width' => $data[0],
+      'height' => $data[1],
+      'extension' => $extension,
+      'file_size' => $file_size,
+      'mime_type' => $data['mime']);
+  }
+  return $details;
+}
   
