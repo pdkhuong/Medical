@@ -50,7 +50,7 @@ class Blog extends Public_Controller
 	public function index()
 	{
     $itemPerPage = Settings::get('records_per_page');
-    $base_where = "`status`='live'";
+    $base_where = array('status'=>'live');//"`status`='live'";
     $total_rows = $this->blog_m->count_by($base_where);
     $pagination = frontendPaging('blog/page', $total_rows, $itemPerPage, 3);
 
@@ -99,8 +99,9 @@ class Blog extends Public_Controller
 		$slug or redirect('blog');
 
     $itemPerPage = Settings::get('records_per_page');
-    $base_where = "`status` = 'live' AND `category_id` = '{$category->id}'";
+    $base_where = array('status'=>'live', 'category'=>$category->id);//"`status` = 'live' AND `category_id` = '{$category->id}'";
     $total_rows = $this->blog_m->count_by($base_where);
+    //echo "<pre>"; print_r($total_rows); die();
     $pagination = frontendPaging('blog/category/'.$category->slug, $total_rows, $itemPerPage, 4);
 
     $blogs = $this->blog_m

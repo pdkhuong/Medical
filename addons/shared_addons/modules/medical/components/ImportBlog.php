@@ -22,7 +22,7 @@ class ImportBlog
     $fileId = 0;
     $fileExt = 'jpg';
     $fileUniqId = substr(md5(microtime() . rand(0,100)), 0, 12).$fileExt;
-    $fileName = $fileUniqId.$fileExt.'.'.$fileExt;
+    $fileName = $fileUniqId.'.'.$fileExt;
     $fileFolder = FCPATH."uploads/default/files/";
 
     $result = file_put_contents($fileFolder.$fileName, file_get_contents($fileUrl));
@@ -38,7 +38,7 @@ class ImportBlog
         'description'	=> 'import',
         'alt_attribute'	=> '',
         'filename'		=> $fileName,
-        'extension'		=> $info['extension'],
+        'extension'		=> '.'.$info['extension'],
         'mimetype'		=> $info['mime_type'],
         'filesize'		=> $info['file_size'],
         'width'			=> $info['width'],
@@ -52,32 +52,39 @@ class ImportBlog
 
   }
   public function import(){
-
-    $blogMainLink = "http://www.specialistdentalgroup.com/blog/";
-    for($page = 1; $page <= self::BLOG_NUM_PAGE; $page++){
-      $link = $page!= 1 ? $blogMainLink.'page/'.$page : $blogMainLink;
-      $blockLinkByPages = $this->getLinkList($link);
-      foreach($blockLinkByPages as $blockLinkByPage){
-        $this->saveBlogData($blockLinkByPage, 1);
+    die();
+    if(isset($_GET['blog'])){
+      $blogMainLink = "http://www.specialistdentalgroup.com/blog/";
+      for($page = 1; $page <= self::BLOG_NUM_PAGE; $page++){
+        $link = $page!= 1 ? $blogMainLink.'page/'.$page : $blogMainLink;
+        $blockLinkByPages = $this->getLinkList($link);
+        echo $page; echo "<br>";
+        foreach($blockLinkByPages as $blockLinkByPage){
+          $this->saveBlogData($blockLinkByPage, 1);
+        }
       }
     }
-    $blogMainLink = "http://www.specialistdentalgroup.com/category/dentist-blog/";
-    for($page = 1; $page <= self::DENTIST_BLOG_NUM_PAGE; $page++){
-      $link = $page!= 1 ? $blogMainLink.'page/'.$page : $blogMainLink;
-      $blockLinkByPages = $this->getLinkList($link);
-      foreach($blockLinkByPages as $blockLinkByPage){
-        $this->saveBlogData($blockLinkByPage, 2);
+    if(isset($_GET['dentist-blog'])){
+      $blogMainLink = "http://www.specialistdentalgroup.com/category/dentist-blog/";
+      for($page = 1; $page <= self::DENTIST_BLOG_NUM_PAGE; $page++){
+        $link = $page!= 1 ? $blogMainLink.'page/'.$page : $blogMainLink;
+        echo $page; echo "<br>";
+        $blockLinkByPages = $this->getLinkList($link);
+        foreach($blockLinkByPages as $blockLinkByPage){
+          $this->saveBlogData($blockLinkByPage, 2);
+        }
       }
     }
-
   }
   public function saveBlogData($elementInfo, $categoryId=1){
     $link = $elementInfo['link'];
     $linkArr = explode("/", $link);
     $slug = $linkArr[count($linkArr)-2];
     $content = file_get_html($link);
+    echo $link;
     if($content){
-      $title = $elementInfo['title'];
+      echo "->done<br>\n";
+      $title = $content->find("div.banner", 0)->plaintext;
       $content = $content->find('div.main-content-div', 0);
       /*
       $body = $content->find('p');
@@ -92,7 +99,7 @@ class ImportBlog
       }*/
       //$body = str_replace("specialistdentalgroup.com", "medtour.com.au" ,$content->innertext);
       $fileUrl = $elementInfo['thumbnail'];
-      $fileId = $this->downloadFile($fileUrl);
+      $fileId = $fileUrl ? $this->downloadFile($fileUrl) : null;
       $body = $content->innertext;
       $data = array();
       $data['title'] = trim($title);
@@ -117,13 +124,15 @@ class ImportBlog
     $mainPage = file_get_html($mainPageLink);
     //$linkElements = $mainPage->find("a.read-more");
     $linkElements = $mainPage->find("a.thumbnail");
+    if(!$linkElements){
+      $linkElements = $mainPage->find("a.read-more");
+    }
     if($linkElements){
       foreach($linkElements as $key => $linkElement){
         if($linkElement){
           $link = $linkElement->href;
-          $title = $linkElement->title;
-          $thumbnail = $linkElement->find("img", 0)->src;
-          $ret[] = array('link'=>$link, 'title'=>$title, 'thumbnail'=>$thumbnail);
+          $thumbnail = $linkElement->find("img", 0) ? $linkElement->find("img", 0)->src : "";
+          $ret[] = array('link'=>$link, 'thumbnail'=>$thumbnail);
         }
       }
     }

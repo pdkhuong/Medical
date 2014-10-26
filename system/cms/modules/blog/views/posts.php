@@ -44,11 +44,15 @@
                 </small>
                 <br>
                 <br>
-                <?php echo $post['intro'] ?>
+                <?php
+                  echo $post['intro'];
+                ?>
                 <a href="<?php echo $blogLink ?>" title="Read More" class="read-more btn"> Read More</a>
               </div>
             </div>
           <?php endforeach;?>
+          <?php echo $pagination['links']?>
+
         <?php else:?>
 
           {{ helper:lang line="blog:currently_no_posts" }}
