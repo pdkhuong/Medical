@@ -1,7 +1,7 @@
 <?php
 class ImportBlog
 {
-  CONST BLOG_NUM_PAGE = 1;
+  CONST BLOG_NUM_PAGE = 35;
   CONST DENTIST_BLOG_NUM_PAGE = 7;
 	public $blogModel = null;
   public $fileModel = null;
@@ -21,7 +21,7 @@ class ImportBlog
   public function downloadFile($fileUrl){
     $fileId = 0;
     $fileExt = 'jpg';
-    $fileUniqId = substr(md5(microtime() . rand(0,100)), 0, 12).substr($fileExt,1);
+    $fileUniqId = substr(md5(microtime() . rand(0,100)), 0, 12).$fileExt;
     $fileName = $fileUniqId.$fileExt.'.'.$fileExt;
     $fileFolder = FCPATH."uploads/default/files/";
 
@@ -61,7 +61,6 @@ class ImportBlog
         $this->saveBlogData($blockLinkByPage, 1);
       }
     }
-die();
     $blogMainLink = "http://www.specialistdentalgroup.com/category/dentist-blog/";
     for($page = 1; $page <= self::DENTIST_BLOG_NUM_PAGE; $page++){
       $link = $page!= 1 ? $blogMainLink.'page/'.$page : $blogMainLink;
